@@ -1,10 +1,19 @@
 // ============================================================
-// Bento Grid Features
+// Bento Grid Features — 9-Card Asymmetrical Layout
 // ============================================================
 
 import type { Feature } from '@/lib/types';
 
 export const FEATURES: Feature[] = [
+  {
+    id: 'tech-talks',
+    title: 'Tech Talks',
+    description:
+      'Industry professionals and alumni share insights on trends, career paths, and emerging technologies.',
+    icon: '🎤',
+    size: 'small',
+    color: '#8A8A8A',
+  },
   {
     id: 'hackathons',
     title: 'Hackathons',
@@ -15,6 +24,15 @@ export const FEATURES: Feature[] = [
     color: '#D4643B',
     stat: '10+',
     statLabel: 'Hackathons/year',
+  },
+  {
+    id: 'open-source',
+    title: 'Open Source',
+    description:
+      'Contributing to open-source projects and building tools used by the community. Learn git workflows and collaborative development.',
+    icon: '🌐',
+    size: 'small',
+    color: '#D4643B',
   },
   {
     id: 'workshops',
@@ -28,6 +46,24 @@ export const FEATURES: Feature[] = [
     statLabel: 'Workshops conducted',
   },
   {
+    id: 'peer-learning',
+    title: 'Peer Learning',
+    description:
+      'Study groups, coding sessions, and DSA practice circles. Learn together, grow together.',
+    icon: '🤝',
+    size: 'small',
+    color: '#D9A84E',
+  },
+  {
+    id: 'community-events',
+    title: 'Community Events',
+    description:
+      'Quarterly meetups, lightning talks, and social gatherings. Connect with fellow tech enthusiasts and build lasting relationships.',
+    icon: '🎉',
+    size: 'small',
+    color: '#7A9A6B',
+  },
+  {
     id: 'project-mentoring',
     title: 'Project Mentoring',
     description:
@@ -39,31 +75,13 @@ export const FEATURES: Feature[] = [
     statLabel: 'Projects mentored',
   },
   {
-    id: 'tech-talks',
-    title: 'Tech Talks',
+    id: 'code-challenges',
+    title: 'Code Challenges',
     description:
-      'Industry professionals and alumni share insights on trends, career paths, and emerging technologies.',
-    icon: '🎤',
-    size: 'small',
-    color: '#8A8A8A',
-  },
-  {
-    id: 'open-source',
-    title: 'Open Source',
-    description:
-      'Contributing to open-source projects and building tools used by the community. Learn git workflows and collaborative development.',
-    icon: '🌐',
+      'Weekly competitive programming contests with prizes. Sharpen your algorithmic skills and compete with the community.',
+    icon: '⚔️',
     size: 'small',
     color: '#D4643B',
-  },
-  {
-    id: 'peer-learning',
-    title: 'Peer Learning',
-    description:
-      'Study groups, coding sessions, and DSA practice circles. Learn together, grow together.',
-    icon: '🤝',
-    size: 'small',
-    color: '#D9A84E',
   },
   {
     id: 'industry-connect',
