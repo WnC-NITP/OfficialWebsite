@@ -102,18 +102,23 @@ export default function BentoGrid() {
       {/* Dynamic Structural Responsive Grid Engine */}
       <style dangerouslySetInnerHTML={{ __html: `
         /* 📱 Tablet Viewports (Clean 2-Column Grid Setup) */
-        @media (min-width: 768px) and (max-width: 1023px) {
-          .bento-grid-container {
-            display: grid !important;
-            grid-template-columns: repeat(2, 1fr) !important;
-            grid-auto-flow: row dense !important;
-          }
-          /* Make major highlight feature components wider on tablet sizes */
-          .bento-hackathons { grid-column: span 2 !important; }
-          .bento-industry-connect { grid-column: span 2 !important; }
-        }
+          @media (min-width: 777px) and (max-width: 1022px) {
+            .bento-grid-container {
+              display: grid !important;
+              grid-template-columns: repeat(2, 1fr) !important;
+              grid-auto-flow: row dense !important;
+            }
+            /* Hide the code challenges card completely in this range */
+            .bento-code-challenges { 
+              display: none !important; 
+            }
+            /* Make major highlight feature components wider on tablet sizes */
+            .bento-hackathons { grid-column: span 2 !important; }
+            .bento-industry-connect { grid-column: span 2 !important; }
+          }  
 
-        /* 🖥️ Large Desktop Viewports (Your exact original Bento Matrix) */
+
+        /* 🖥️ Large Desktop Viewports (exact original Bento Matrix) */
         @media (min-width: 1024px) {
           .bento-grid-container {
             display: grid !important;
