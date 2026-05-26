@@ -59,7 +59,7 @@ export default function DeveloperCard({ developer }: { developer: Developer }) {
 
           {/* GET! Text */}
           <div className="absolute right-4 bottom-16 z-20 transform rotate-[-15deg] pointer-events-none drop-shadow-md">
-            <span className="font-script text-[#ff3300] font-black text-5xl tracking-tighter" style={{ textShadow: '2px 2px 0px rgba(0,0,0,0.1)' }}>Get!</span>
+            <span className="font-script text-[#ff3300] font-black text-5xl tracking-tighter" style={{ textShadow: '2px 2px 0px rgba(0,0,0,0.1)' }}>DEV!!</span>
           </div>
 
           {/* Black Circular Sticker (overlapping border) */}
