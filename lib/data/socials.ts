@@ -32,7 +32,7 @@ export const SOCIAL_LINKS: SocialPlatform[] = [
   },
   {
     name: 'Discord',
-    url: 'https://discord.gg/wncc-nitp',
+    url: '#',
     icon: 'discord',
   },
 ];

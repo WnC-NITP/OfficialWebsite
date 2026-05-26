@@ -23,7 +23,7 @@ export const FOOTER_LINKS = {
   ],
   resources: [
     { label: 'Blog', href: '/blog' },
-    { label: 'Open Source', href: 'https://github.com/wncc-nitp', isExternal: true },
+    { label: 'Open Source', href: 'https://github.com/WnC-NITP', isExternal: true },
     { label: 'Join Us', href: '/contact' },
     { label: 'Developers', href: '/developers' },
   ],
