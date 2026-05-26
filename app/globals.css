@@ -801,8 +801,4 @@ a {
     padding: 5rem 1rem 2rem;
   }
 
-  .rock-container {
-    width: clamp(180px, 55vw, 260px);
-    bottom: 15%;
-  }
 }

@@ -5,6 +5,7 @@ import { CONTACT_API_ENDPOINT } from '@/lib/constants';
 import { SOCIAL_LINKS } from '@/lib/data/socials';
 import type { ContactFormData } from '@/lib/types';
 import ContactGridCanvas from './ContactGridCanvas';
+import styles from './ContactFormFull.module.css';
 
 const socialIconPaths: Record<string, string> = {
   github:
@@ -35,12 +36,12 @@ function FloatingField({
   children: React.ReactNode;
 }) {
   return (
-    <div className="cf-field">
+    <div className={styles['cf-field']}>
       {children}
-      <label htmlFor={id} className="cf-label">
+      <label htmlFor={id} className={styles['cf-label']}>
         {label}
       </label>
-      <span className="cf-underline" aria-hidden="true" />
+      <span className={styles['cf-underline']} aria-hidden="true" />
     </div>
   );
 }
@@ -91,37 +92,37 @@ export default function ContactFormFull() {
   };
 
   return (
-    <section className="cf-section">
+    <section className={styles['cf-section']}>
       {/* Mesh bg — styled via globals.css .cf-mesh */}
-      <div className="cf-mesh" aria-hidden="true" />
+      <div className={styles['cf-mesh']} aria-hidden="true" />
       <ContactGridCanvas />
 
-      <div className="cf-inner">
+      <div className={styles['cf-inner']}>
         {/* ── Hero ── */}
-        <header className="cf-hero">
-          <h1 className="cf-hero-title">Contact us</h1>
-          <div className="cf-hero-sub-row">
-            <span className="cf-hero-dash" aria-hidden="true" />
-            <p className="cf-hero-subtitle" aria-hidden="true">Have a project?</p>
+        <header className={styles['cf-hero']}>
+          <h1 className={styles['cf-hero-title']}>Contact us</h1>
+          <div className={styles['cf-hero-sub-row']}>
+            <span className={styles['cf-hero-dash']} aria-hidden="true" />
+            <p className={styles['cf-hero-subtitle']} aria-hidden="true">Have a project?</p>
           </div>
         </header>
 
         {/* ── Body grid ── */}
-        <div className="cf-body">
+        <div className={styles['cf-body']}>
 
           {/* LEFT — Form */}
           <form ref={formRef} onSubmit={handleSubmit} noValidate>
 
             {/* Service chips */}
-            <div className="cf-chips">
-              <p className="cf-section-label">What can we do for you?</p>
-              <div className="cf-chip-row" role="group" aria-label="Select services">
+            <div className={styles['cf-chips']}>
+              <p className={styles['cf-section-label']}>What can we do for you?</p>
+              <div className={styles['cf-chip-row']} role="group" aria-label="Select services">
                 {SERVICES.map((svc) => (
                   <button
                     key={svc}
                     type="button"
                     id={`chip-${svc.toLowerCase()}`}
-                    className="cf-chip"
+                    className={styles['cf-chip']}
                     onClick={() => toggleService(svc)}
                     aria-pressed={formData.services.includes(svc)}
                   >
@@ -132,8 +133,8 @@ export default function ContactFormFull() {
             </div>
 
             {/* Fields */}
-            <div className="cf-fields">
-              <div className="cf-row">
+            <div className={styles['cf-fields']}>
+              <div className={styles['cf-row']}>
                 <FloatingField id="contact-name" label="Your name">
                   <input
                     id="contact-name"
@@ -144,7 +145,7 @@ export default function ContactFormFull() {
                     autoComplete="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="cf-input"
+                    className={styles['cf-input']}
                   />
                 </FloatingField>
 
@@ -158,7 +159,7 @@ export default function ContactFormFull() {
                     autoComplete="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="cf-input"
+                    className={styles['cf-input']}
                   />
                 </FloatingField>
               </div>
@@ -172,29 +173,29 @@ export default function ContactFormFull() {
                   rows={3}
                   value={formData.message}
                   onChange={handleChange}
-                  className="cf-input cf-textarea"
+                  className={`${styles['cf-input']} ${styles['cf-textarea']}`}
                 />
               </FloatingField>
             </div>
 
             {/* CTA + status */}
-            <div className="cf-cta-row">
+            <div className={styles['cf-cta-row']}>
               <button
                 id="contact-submit"
                 type="submit"
                 disabled={loading}
-                className="cf-submit"
+                className={styles['cf-submit']}
                 aria-label={loading ? 'Sending your message…' : 'Send request'}
               >
                 {loading ? (
                   <>
-                    <span className="cf-spinner" aria-hidden="true" />
+                    <span className={styles['cf-spinner']} aria-hidden="true" />
                     Sending…
                   </>
                 ) : (
                   <>
-                    <span className="cf-submit-text">Send request</span>
-                    <span className="cf-submit-arrow" aria-hidden="true">
+                    <span className={styles['cf-submit-text']}>Send request</span>
+                    <span className={styles['cf-submit-arrow']} aria-hidden="true">
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" strokeWidth="1.6">
                         <path d="M5 12h14M12 5l7 7-7 7"
@@ -206,7 +207,7 @@ export default function ContactFormFull() {
               </button>
 
               {status === 'success' && (
-                <span className="cf-toast cf-toast--success" role="status">
+                <span className={`${styles['cf-toast']} ${styles['cf-toast--success']}`} role="status">
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
                     <polyline points="20 6 9 17 4 12" />
@@ -215,7 +216,7 @@ export default function ContactFormFull() {
                 </span>
               )}
               {status === 'error' && (
-                <span className="cf-toast cf-toast--error" role="alert">
+                <span className={`${styles['cf-toast']} ${styles['cf-toast--error']}`} role="alert">
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
                     <circle cx="12" cy="12" r="10" />
@@ -229,10 +230,10 @@ export default function ContactFormFull() {
           </form>
 
           {/* RIGHT — Description + Socials */}
-          <aside id="contact-info" className="cf-aside">
+          <aside id="contact-info" className={styles['cf-aside']}>
             <div>
-              <div className="cf-aside-divider" aria-hidden="true" />
-              <p className="cf-aside-text">
+              <div className={styles['cf-aside-divider']} aria-hidden="true" />
+              <p className={styles['cf-aside-text']}>
                 Tell us about your vision: which challenges are you facing?
                 What are your goals and expectations? What would success look
                 like and how much are you planning to spend to get there?
@@ -240,7 +241,7 @@ export default function ContactFormFull() {
             </div>
 
             <nav aria-label="Social media links">
-              <div className="cf-socials">
+              <div className={styles['cf-socials']}>
                 {SOCIAL_LINKS.map((social) => (
                   <a
                     key={social.name}
@@ -250,7 +251,7 @@ export default function ContactFormFull() {
                     rel="noopener noreferrer"
                     aria-label={`${social.name} (opens in new tab)`}
                     title={social.name}
-                    className="cf-social-btn"
+                    className={styles['cf-social-btn']}
                   >
                     <svg width="15" height="15" viewBox="0 0 24 24"
                       fill="currentColor" aria-hidden="true">
