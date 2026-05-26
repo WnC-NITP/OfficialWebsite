@@ -34,51 +34,13 @@ export default function DeveloperCard({ developer }: { developer: Developer }) {
 
         {/* Portrait Container */}
         <div className="mx-6 mt-2 relative border-[4px] border-[#222] h-[260px] flex items-end justify-center rounded-sm overflow-visible"
-          style={{ backgroundColor: '#f5c800' }}>
-
-          {/* Yellow Perspective Grid SVG */}
-          <svg
-            className="absolute inset-0 w-full h-full pointer-events-none z-0"
-            viewBox="0 0 320 260"
-            preserveAspectRatio="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            {/* Vanishing-point perspective grid lines radiating from center */}
-            {/* Horizontal lines fanning out */}
-            {[0.05, 0.12, 0.20, 0.28, 0.36, 0.44, 0.52, 0.60, 0.68, 0.76, 0.84, 0.92, 0.99].map((t, i) => (
-              <line key={`h${i}`}
-                x1={0} y1={260 * t}
-                x2={320} y2={260 * t}
-                stroke="#c9a000" strokeWidth="0.8" opacity="0.7"
-              />
-            ))}
-            {/* Vertical perspective lines converging to center vanishing point */}
-            {[-1, -0.75, -0.55, -0.38, -0.24, -0.12, -0.04, 0, 0.04, 0.12, 0.24, 0.38, 0.55, 0.75, 1].map((offset, i) => {
-              const vx = 160; // vanishing x
-              const vy = 80;  // vanishing y (upper centre)
-              const bx = 160 + offset * 320;
-              return (
-                <line key={`v${i}`}
-                  x1={vx} y1={vy}
-                  x2={bx} y2={260}
-                  stroke="#c9a000" strokeWidth="0.8" opacity="0.7"
-                />
-              );
-            })}
-            {/* Extra diagonal lines for depth */}
-            {[-1, -0.6, -0.25, 0, 0.25, 0.6, 1].map((offset, i) => {
-              const vx = 160;
-              const vy = 80;
-              const tx = 160 + offset * 320;
-              return (
-                <line key={`d${i}`}
-                  x1={vx} y1={vy}
-                  x2={tx} y2={0}
-                  stroke="#c9a000" strokeWidth="0.8" opacity="0.5"
-                />
-              );
-            })}
-          </svg>
+          style={{ 
+            backgroundImage: 'url("https://i.pinimg.com/1200x/2f/06/4c/2f064cb24c938b4f83c092ca600333af.jpg")', 
+            backgroundSize: 'cover', 
+            backgroundPosition: 'center' 
+          }}>
+          {/* Background Overlay (Optional) to make developer pop */}
+          <div className="absolute inset-0 bg-black/20 pointer-events-none z-0" />
 
           {/* Developer Image */}
           <div className="absolute inset-0 flex items-end justify-center z-10 overflow-visible rounded-sm"
@@ -86,10 +48,11 @@ export default function DeveloperCard({ developer }: { developer: Developer }) {
             <img
               src={developer.image}
               alt={developer.name}
-              className="w-[90%] h-[95%] object-cover object-bottom transition-transform duration-500 ease-out group-hover:scale-110 drop-shadow-2xl filter contrast-125"
+              className="w-[90%] h-[95%] object-cover object-bottom transition-transform duration-500 ease-out group-hover:scale-110"
               style={{
                 objectPosition: `${developer.imagePosition?.x ?? 50}% ${developer.imagePosition?.y ?? 30}%`,
-                transform: `translate(${developer.imageTransform?.x || 0}px, ${developer.imageTransform?.y || 0}px) scale(${developer.imageTransform?.scale || 1})`
+                transform: `translate(${developer.imageTransform?.x || 0}px, ${developer.imageTransform?.y || 0}px) scale(${developer.imageTransform?.scale || 1})`,
+                filter: 'drop-shadow(2px 2px 0 white) drop-shadow(-2px -2px 0 white) drop-shadow(-2px 2px 0 white) drop-shadow(2px -2px 0 white) drop-shadow(0 25px 25px rgba(0,0,0,0.5)) contrast(1.25)'
               }}
             />
           </div>
@@ -172,9 +135,9 @@ export default function DeveloperCard({ developer }: { developer: Developer }) {
             <div className="flex flex-col w-[30%] border-[3px] border-[#111] bg-white h-[90px]">
               <div className="flex-1 bg-[#111] flex items-center justify-center p-2 relative overflow-hidden">
                 <img
-                  src="/images/logo.png"
+                  src="/images/logo1.png"
                   alt="WNCC Logo"
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-contain scale-[1.5]"
                 />
               </div>
               <div className="h-[25px] flex flex-col items-center justify-center bg-white">
