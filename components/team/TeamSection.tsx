@@ -82,43 +82,39 @@ export default function TeamSection({ team }: { team: Team }) {
     });
   }, { scope: sectionRef });
 
-  const seniors = team.members.filter((m) => m.hierarchy === 'senior');
-  const juniors = team.members.filter((m) => m.hierarchy === 'junior');
 
   return (
-    <section ref={sectionRef} id={team.slug} className="py-16 scroll-mt-24">
+    <section ref={sectionRef} id={team.slug} className="py-16 scroll-mt-24 flex flex-col items-center">
       {/* Team Header */}
-      <div className="flex items-start gap-4 mb-12" style={{ borderLeft: `4px solid ${team.color}` }}>
-        <div className="pl-6">
-          <div className="flex items-center gap-3.5 mb-2 group">
-            <div className="flex-shrink-0 filter drop-shadow-[0px_0px_8px_rgba(255,255,255,0.06)]">
-              <TeamIcon slug={team.slug} color={team.color} />
-            </div>
-            <h2 className="text-heading text-[var(--text-primary)]" style={{ fontFamily: 'var(--font-display)' }}>
-              {team.name}
-            </h2>
+      <div className="flex flex-col items-center text-center mb-12 w-full">
+        <div className="flex items-center justify-center gap-3.5 mb-2 group">
+          <div className="flex-shrink-0 filter drop-shadow-[0px_0px_8px_rgba(255,255,255,0.06)]">
+            <TeamIcon slug={team.slug} color={team.color} />
           </div>
-          <p className="text-body max-w-2xl">{team.description}</p>
+          <h2 className="text-heading text-[var(--text-primary)]" style={{ fontFamily: 'var(--font-display)' }}>
+            {team.name}
+          </h2>
         </div>
+        <p className="text-body max-w-2xl mx-auto">{team.description}</p>
+        <div className="w-16 h-1 mt-4 rounded-full" style={{ backgroundColor: team.color }} />
       </div>
 
       {/* Team Leader Section */}
-      <div className={seniors.length > 0 || juniors.length > 0 ? "mb-14" : ""}>
-        <h3 className="text-mono text-xs mb-6 tracking-[0.2em] text-[var(--text-accent)]">// TEAM LEAD</h3>
-        <div className="flex flex-col md:flex-row gap-8 items-center md:items-start max-w-3xl">
+      <div className={`flex flex-col items-center w-full ${team.members.length > 0 ? "mb-14" : ""}`}>
+        <h3 className="text-mono text-xs mb-6 tracking-[0.2em] text-[var(--text-accent)] text-center">// TEAM LEAD</h3>
+        <div className="flex flex-col gap-8 items-center justify-center w-full max-w-3xl">
           <div className="w-full max-w-[325px] flex-shrink-0 member-card">
             <MemberCard member={team.leader} teamColor={team.color} teamName={team.name} />
           </div>
           {team.leader.quote && (
-            <div className="relative flex-grow mt-4 md:mt-16 bg-yellow-300 text-[#0e1713] p-6 rounded-2xl border-[3px] border-[#0e1713] shadow-[6px_6px_0px_#0e1713] max-w-md select-none group">
-              {/* Comic bubble pointing left arrow on md, pointing top on mobile */}
-              <div className="absolute hidden md:block top-10 -left-3 w-5 h-5 bg-yellow-300 border-l-[3px] border-b-[3px] border-[#0e1713] rotate-45" />
-              <div className="absolute md:hidden top-[-10px] left-12 w-5 h-5 bg-yellow-300 border-l-[3px] border-t-[3px] border-[#0e1713] rotate-45" />
+            <div className="relative flex-grow mt-6 bg-yellow-300 text-[#0e1713] p-6 rounded-2xl border-[3px] border-[#0e1713] shadow-[6px_6px_0px_#0e1713] max-w-md select-none group">
+              {/* Comic bubble pointing top (centered) */}
+              <div className="absolute top-[-10px] left-1/2 -translate-x-1/2 w-5 h-5 bg-yellow-300 border-l-[3px] border-t-[3px] border-[#0e1713] rotate-45" />
               
-              <span className="font-display font-[900] text-base uppercase tracking-tight block mb-2 text-[#0e1713] drop-shadow-[0.5px_0.5px_0px_rgba(255,255,255,0.6)]">
+              <span className="font-display font-[900] text-base uppercase tracking-tight block mb-2 text-[#0e1713] drop-shadow-[0.5px_0.5px_0px_rgba(255,255,255,0.6)] text-center">
                 &ldquo; Lead's Directive &rdquo;
               </span>
-              <p className="font-sans text-sm font-semibold leading-relaxed italic text-[#0e1713] opacity-95">
+              <p className="font-sans text-sm font-semibold leading-relaxed italic text-[#0e1713] opacity-95 text-center">
                 &ldquo;{team.leader.quote}&rdquo;
               </p>
               
@@ -133,27 +129,13 @@ export default function TeamSection({ team }: { team: Team }) {
         </div>
       </div>
 
-      {/* Senior Members */}
-      {seniors.length > 0 && (
-        <div className={juniors.length > 0 ? "mb-12" : ""}>
-          <h3 className="text-mono text-xs mb-6 tracking-[0.2em] text-[var(--text-accent)]">// SENIOR MEMBERS</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {seniors.map((member) => (
-              <div key={member.id} className="member-card">
-                <MemberCard member={member} teamColor={team.color} teamName={team.name} />
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* Junior Members */}
-      {juniors.length > 0 && (
-        <div>
-          <h3 className="text-mono text-xs mb-6 tracking-[0.2em] text-[var(--text-accent)]">// JUNIOR MEMBERS</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {juniors.map((member) => (
-              <div key={member.id} className="member-card">
+      {/* Team Members */}
+      {team.members.length > 0 && (
+        <div className="flex flex-col items-center w-full">
+          <h3 className="text-mono text-xs mb-6 tracking-[0.2em] text-[var(--text-accent)] text-center">// MEMBERS</h3>
+          <div className="flex flex-wrap justify-center gap-6 w-full">
+            {team.members.map((member) => (
+              <div key={member.id} className="member-card w-full sm:w-[calc(50%-12px)] md:w-[calc(33.33%-16px)] lg:w-[calc(25%-18px)] max-w-[325px]">
                 <MemberCard member={member} teamColor={team.color} teamName={team.name} />
               </div>
             ))}

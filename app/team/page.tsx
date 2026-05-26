@@ -11,13 +11,13 @@ export default function TeamPage() {
   return (
     <main className="pt-24">
       {/* Hero */}
-      <section className="section-padding pb-8">
-        <div className="container-wide">
+      <section className="section-padding pb-8 text-center flex flex-col items-center">
+        <div className="container-wide flex flex-col items-center text-center">
           <p className="text-mono text-xs mb-4 tracking-[0.2em]">// OUR PEOPLE</p>
           <h1 className="text-display gradient-text-amber mb-4">Our Team</h1>
-          <p className="text-body max-w-2xl text-lg">
+          <p className="text-body max-w-2xl text-lg mx-auto">
             A diverse collective of builders, designers, and thinkers organized into 7 specialized teams.
-            From Post Bearers who lead, to Senior Members who mentor, to Junior Members who are the future.
+            From Team Leads who direct, to the dedicated members who bring projects to life.
           </p>
         </div>
       </section>

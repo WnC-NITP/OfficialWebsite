@@ -2,9 +2,6 @@
 // WnCC NIT Patna — Type Definitions
 // ============================================================
 
-/** Hierarchy levels for team members */
-export type MemberHierarchy = 'post-bearer' | 'senior' | 'junior';
-
 /** Image position/crop control for card images */
 export interface ImagePosition {
   x: number;      // 0-100 (CSS object-position X %)
@@ -26,7 +23,6 @@ export interface TeamMember {
   id: string;
   name: string;
   role: string;
-  hierarchy: MemberHierarchy;
   image: string;
   imagePosition?: ImagePosition;
   socials: SocialLinks;

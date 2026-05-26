@@ -17,7 +17,6 @@ export const TEAMS: Team[] = [
       id: 'web-lead',
       name: 'Arjun Mehta',
       role: 'Team Lead',
-      hierarchy: 'post-bearer',
       image: '/images/team/placeholder-1.png',
       socials: {
         linkedin: 'https://linkedin.com/in/arjun-mehta',
@@ -31,7 +30,6 @@ export const TEAMS: Team[] = [
         id: 'web-sr-1',
         name: 'Priya Sharma',
         role: 'Senior Developer',
-        hierarchy: 'senior',
         image: '/images/team/placeholder-2.png',
         socials: {
           linkedin: 'https://linkedin.com/in/priya-sharma',
@@ -43,7 +41,6 @@ export const TEAMS: Team[] = [
         id: 'web-sr-2',
         name: 'Vikram Singh',
         role: 'Senior Developer',
-        hierarchy: 'senior',
         image: '/images/team/placeholder-3.png',
         socials: {
           linkedin: 'https://linkedin.com/in/vikram-singh',
@@ -55,9 +52,9 @@ export const TEAMS: Team[] = [
         id: 'web-jr-1',
         name: 'Sneha Patel',
         role: 'Junior Developer',
-        hierarchy: 'junior',
         image: '/images/team/placeholder-4.png',
         socials: {
+          linkedin: 'https://linkedin.com/in/sneha-patel',
           github: 'https://github.com/snehapatel',
           email: 'sneha.patel@nitp.ac.in',
         },
@@ -66,9 +63,9 @@ export const TEAMS: Team[] = [
         id: 'web-jr-2',
         name: 'Rohit Kumar',
         role: 'Junior Developer',
-        hierarchy: 'junior',
         image: '/images/team/placeholder-5.png',
         socials: {
+          linkedin: 'https://linkedin.com/in/rohit-kumar',
           github: 'https://github.com/rohitkumar',
           email: 'rohit.kumar@nitp.ac.in',
         },
@@ -87,7 +84,6 @@ export const TEAMS: Team[] = [
       id: 'blockchain-lead',
       name: 'Kavya Reddy',
       role: 'Team Lead',
-      hierarchy: 'post-bearer',
       image: '/images/team/placeholder-6.png',
       socials: {
         linkedin: 'https://linkedin.com/in/kavya-reddy',
@@ -101,9 +97,9 @@ export const TEAMS: Team[] = [
         id: 'bc-sr-1',
         name: 'Aditya Jha',
         role: 'Smart Contract Dev',
-        hierarchy: 'senior',
         image: '/images/team/placeholder-7.png',
         socials: {
+          linkedin: 'https://linkedin.com/in/aditya-jha',
           github: 'https://github.com/adityajha',
           email: 'aditya.jha@nitp.ac.in',
         },
@@ -112,9 +108,9 @@ export const TEAMS: Team[] = [
         id: 'bc-jr-1',
         name: 'Nisha Gupta',
         role: 'Junior Developer',
-        hierarchy: 'junior',
         image: '/images/team/placeholder-8.png',
         socials: {
+          linkedin: 'https://linkedin.com/in/nisha-gupta',
           github: 'https://github.com/nishagupta',
           email: 'nisha.gupta@nitp.ac.in',
         },
@@ -133,7 +129,6 @@ export const TEAMS: Team[] = [
       id: 'genai-lead',
       name: 'Rishi Verma',
       role: 'Team Lead',
-      hierarchy: 'post-bearer',
       image: '/images/team/placeholder-9.png',
       socials: {
         linkedin: 'https://linkedin.com/in/rishi-verma',
@@ -147,9 +142,9 @@ export const TEAMS: Team[] = [
         id: 'genai-sr-1',
         name: 'Ananya Mishra',
         role: 'AI Researcher',
-        hierarchy: 'senior',
         image: '/images/team/placeholder-10.png',
         socials: {
+          linkedin: 'https://linkedin.com/in/ananya-mishra',
           github: 'https://github.com/ananyamishra',
           email: 'ananya.mishra@nitp.ac.in',
         },
@@ -158,9 +153,9 @@ export const TEAMS: Team[] = [
         id: 'genai-jr-1',
         name: 'Karan Yadav',
         role: 'Junior Developer',
-        hierarchy: 'junior',
         image: '/images/team/placeholder-11.png',
         socials: {
+          linkedin: 'https://linkedin.com/in/karan-yadav',
           github: 'https://github.com/karanyadav',
           email: 'karan.yadav@nitp.ac.in',
         },
@@ -179,7 +174,6 @@ export const TEAMS: Team[] = [
       id: 'ml-lead',
       name: 'Deepak Nair',
       role: 'Team Lead',
-      hierarchy: 'post-bearer',
       image: '/images/team/placeholder-12.png',
       socials: {
         linkedin: 'https://linkedin.com/in/deepak-nair',
@@ -193,9 +187,9 @@ export const TEAMS: Team[] = [
         id: 'ml-sr-1',
         name: 'Meera Krishnan',
         role: 'Data Scientist',
-        hierarchy: 'senior',
         image: '/images/team/placeholder-13.png',
         socials: {
+          linkedin: 'https://linkedin.com/in/meera-krishnan',
           github: 'https://github.com/meerakrishnan',
           email: 'meera.krishnan@nitp.ac.in',
         },
@@ -204,9 +198,9 @@ export const TEAMS: Team[] = [
         id: 'ml-jr-1',
         name: 'Sahil Bansal',
         role: 'Junior ML Engineer',
-        hierarchy: 'junior',
         image: '/images/team/placeholder-14.png',
         socials: {
+          linkedin: 'https://linkedin.com/in/sahil-bansal',
           github: 'https://github.com/sahilbansal',
           email: 'sahil.bansal@nitp.ac.in',
         },
@@ -225,10 +219,10 @@ export const TEAMS: Team[] = [
       id: 'pr-lead',
       name: 'Ishita Agarwal',
       role: 'Team Lead',
-      hierarchy: 'post-bearer',
       image: '/images/team/placeholder-15.png',
       socials: {
         linkedin: 'https://linkedin.com/in/ishita-agarwal',
+        github: 'https://github.com/ishita-agarwal',
         email: 'ishita.agarwal@nitp.ac.in',
       },
       quote: 'Great work deserves a great audience.',
@@ -238,10 +232,10 @@ export const TEAMS: Team[] = [
         id: 'pr-sr-1',
         name: 'Tanvi Bhatt',
         role: 'Senior PR Executive',
-        hierarchy: 'senior',
         image: '/images/team/placeholder-16.png',
         socials: {
           linkedin: 'https://linkedin.com/in/tanvi-bhatt',
+          github: 'https://github.com/tanvi-bhatt',
           email: 'tanvi.bhatt@nitp.ac.in',
         },
       },
@@ -259,7 +253,6 @@ export const TEAMS: Team[] = [
       id: 'sm-lead',
       name: 'Raghav Tiwari',
       role: 'Team Lead',
-      hierarchy: 'post-bearer',
       image: '/images/team/placeholder-17.png',
       socials: {
         linkedin: 'https://linkedin.com/in/raghav-tiwari',
@@ -273,10 +266,10 @@ export const TEAMS: Team[] = [
         id: 'sm-sr-1',
         name: 'Pooja Sinha',
         role: 'Content Strategist',
-        hierarchy: 'senior',
         image: '/images/team/placeholder-18.png',
         socials: {
           linkedin: 'https://linkedin.com/in/pooja-sinha',
+          github: 'https://github.com/pooja-sinha',
           email: 'pooja.sinha@nitp.ac.in',
         },
       },
@@ -294,7 +287,6 @@ export const TEAMS: Team[] = [
       id: 'design-lead',
       name: 'Sanya Kapoor',
       role: 'Team Lead',
-      hierarchy: 'post-bearer',
       image: '/images/team/placeholder-19.png',
       socials: {
         linkedin: 'https://linkedin.com/in/sanya-kapoor',
@@ -308,10 +300,10 @@ export const TEAMS: Team[] = [
         id: 'design-sr-1',
         name: 'Aman Raj',
         role: 'UI/UX Designer',
-        hierarchy: 'senior',
         image: '/images/team/placeholder-20.png',
         socials: {
           linkedin: 'https://linkedin.com/in/aman-raj',
+          github: 'https://github.com/aman-raj',
           email: 'aman.raj@nitp.ac.in',
         },
       },
