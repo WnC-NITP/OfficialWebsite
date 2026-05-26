@@ -4,7 +4,7 @@ import { useState, useCallback, useEffect } from 'react';
 import Image from 'next/image';
 import type { GalleryImage } from '@/lib/types';
 
-interface GalleryGridProps {
+interface PropsGalleryGrid {
   images: GalleryImage[];
   categories: readonly string[];
 }
