@@ -17,7 +17,7 @@ export const TEAMS: Team[] = [
       id: 'web-lead',
       name: 'IDK',
       role: 'Team Lead',
-      image: '/images/team/placeholder-1.png',
+      image: '',
       socials: {
         linkedin: 'https://www.linkedin.com/in/varchas-kumar-073a75366/',
         github: 'https://github.com/varchaskumar',
@@ -52,7 +52,7 @@ export const TEAMS: Team[] = [
         id: 'web-3',
         name: 'Ritesh Yadav',
         role: 'Web Developer',
-        image: '/images/team/placeholder-6.png',
+        image: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779795682/bg-removed-images/dco4u0h88ugcvfoxhcvy.png',
         socials: {
           linkedin: 'https://www.linkedin.com/in/ritesh-yadav-6575573a9?utm_source=share_via&utm_content=profile&utm_medium=member_android',
           github: 'https://github.com/riteshyadav33302111-cell',
@@ -74,7 +74,7 @@ export const TEAMS: Team[] = [
         id: 'web-5',
         name: 'Navya Anand',
         role: 'Web Developer',
-        image: '/images/team/placeholder-8.png',
+        image: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779795109/bg-removed-images/bhsyjy2uvikjh9acaaru.png',
         socials: {
           linkedin: 'https://www.linkedin.com/in/navya-anand-b38744387?utm_source=share_via&utm_content=profile&utm_medium=member_ios',
           github: 'https://github.com/navyaanand954-jpg',
@@ -85,7 +85,7 @@ export const TEAMS: Team[] = [
         id: 'web-6',
         name: 'Satyam Kumar Jha',
         role: 'Web Developer',
-        image: '/images/team/placeholder-9.png',
+        image: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779795533/bg-removed-images/k5sm6i1wljuzb0iun8ju.png',
         socials: {
           linkedin: 'https://www.linkedin.com/in/satyam-kumar-jha-6a4a4736b?utm_source=share_via&utm_content=profile&utm_medium=member_android',
           github: 'satyamkumarjhaa2008-afk',
@@ -96,7 +96,7 @@ export const TEAMS: Team[] = [
         id: 'web-7',
         name: 'Dhruv Jain',
         role: 'Web Developer',
-        image: '/images/team/placeholder-10.png',
+        image: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779795794/bg-removed-images/cxmldwuwlozsx0wbduof.png',
         socials: {
           linkedin: 'www.linkedin.com/in/dhruvjain220781',
           github: 'https://github.com/Dhruvjain2207',
@@ -118,7 +118,7 @@ export const TEAMS: Team[] = [
         id: 'web-9',
         name: 'Sujal Kumar',
         role: 'Web Developer',
-        image: '/images/team/placeholder-12.png',
+        image: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779795621/bg-removed-images/outvfowowi4oq34wcgtd.png',
         socials: {
           linkedin: 'https://www.linkedin.com/in/sujal-kumar-56ab91240',
           github: 'https://github.com/SujalKumar-156',
@@ -129,7 +129,7 @@ export const TEAMS: Team[] = [
         id: 'web-10',
         name: 'Pavan Kumar',
         role: 'Web Developer',
-        image: '/images/team/placeholder-14.png',
+        image: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779831255/bg-removed-images/qxzechaa6zscr1lccees.png',
         socials: {
           linkedin: 'https://www.linkedin.com/in/pavank91/',
           github: 'https://github.com/pavank-hub',
@@ -140,7 +140,7 @@ export const TEAMS: Team[] = [
         id: 'web-11',
         name: 'Rick Roy',
         role: 'Web Developer',
-        image: '/images/team/placeholder-15.png',
+        image: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779795775/bg-removed-images/jgjiralncytclqqxikva.png',
         socials: {
           linkedin: 'https://www.linkedin.com/in/rick-roy-43992233a?utm_source=share_via&utm_content=profile&utm_medium=member_android',
           github: 'https://github.com/Rick13211',
@@ -240,7 +240,7 @@ export const TEAMS: Team[] = [
         id: 'bc-4',
         name: 'Ayush Nag',
         role: 'Blockchain Developer',
-        image: '/images/team/placeholder-20.png',
+        image: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779795030/bg-removed-images/mg7mt3ghdb2shyuvidf5.png',
         socials: {
           linkedin: 'https://www.linkedin.com/in/ayush-nag-21324a314',
           github: 'https://github.com/dev-ayush-17',
@@ -251,7 +251,7 @@ export const TEAMS: Team[] = [
         id: 'bc-5',
         name: 'Ashish Raj',
         role: 'Blockchain Developer',
-        image: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779799828/bg-removed-images/r96weorlbkjvcvsb30z9.png',
+        image: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779795164/bg-removed-images/uzg4nl5uz0ez4j5ioq5z.png',
         socials: {
           linkedin: 'https://www.linkedin.com/in/ashish-raj-408861380',
           github: 'https://github.com/ashishraj-web',
@@ -262,7 +262,7 @@ export const TEAMS: Team[] = [
         id: 'bc-6',
         name: 'Tanishka Jindal',
         role: 'Blockchain Developer',
-        image: '/images/team/placeholder-19.png',
+        image: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779794993/bg-removed-images/bmdvycro57yhr5mibvc6.png',
         socials: {
           linkedin: 'https://www.linkedin.com/in/tanishka-jindal-523343406/',
           github: 'https://github.com/TanishkaJindal',
@@ -296,7 +296,7 @@ export const TEAMS: Team[] = [
         id: 'genai-1',
         name: 'Sakshi Priya',
         role: 'ML Engineer',
-        image: '/images/team/placeholder-18.png',
+        image: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779795350/bg-removed-images/vzzy2xfb6nejcqmx9jr5.png',
         socials: {
           linkedin: 'https://www.linkedin.com/in/sakshi-verma-9206b838b',
           github: 'https://github.com/sakshipriya21-rgb',
@@ -307,7 +307,7 @@ export const TEAMS: Team[] = [
         id: 'genai-2',
         name: 'Biswajit Mandal',
         role: 'ML Engineer',
-        image: '/images/team/placeholder-19.png',
+        image: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779795662/bg-removed-images/llplb806ypgezjfxjkim.png',
         socials: {
           linkedin: 'https://www.linkedin.com/in/biswajit-mandal-0b3790273?utm_source=share_via&utm_content=profile&utm_medium=member_android',
           github: 'https://github.com/BiswajitMandal6',
@@ -340,7 +340,7 @@ export const TEAMS: Team[] = [
         id: 'genai-5',
         name: 'Anand Kashyap',
         role: 'ML Engineer',
-        image: '/images/team/placeholder-19.png',
+        image: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779794958/bg-removed-images/nzdrocjekibqqj6logla.png',
         socials: {
           linkedin: 'www.linkedin.com/in/anand-kashyap-1915ew',
           github: 'https://github.com/kashyapanand21',
@@ -396,7 +396,7 @@ export const TEAMS: Team[] = [
         id: 'ml-2',
         name: 'Archana',
         role: 'Machine Learning Engineer',
-        image: '/images/team/placeholder-19.png',
+        image: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779795720/bg-removed-images/iqjl9bky6m48jww4krkr.png',
         socials: {
           linkedin: 'https://www.linkedin.com/in/archana-7b9049386/',
           github: 'https://github.com/archana-117',
@@ -407,7 +407,7 @@ export const TEAMS: Team[] = [
         id: 'ml-3',
         name: 'Shreyash Tripathi',
         role: 'Machine Learning Engineer',
-        image: '/images/team/placeholder-20.png',
+        image: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779795012/bg-removed-images/ipl5hr3ayg18q6qirmuy.png',
         socials: {
           linkedin: 'https://www.linkedin.com/in/shreyash-tripathi-320352386',
           github: 'https://github.com/shreyashtripathi1077-cmd',
@@ -418,7 +418,7 @@ export const TEAMS: Team[] = [
         id: 'ml-4',
         name: 'Abhinav Anand',
         role: 'Machine Learning Engineer',
-        image: '/images/team/placeholder-19.png',
+        image: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779795410/bg-removed-images/m5jwqc3qserzjdavgsdi.png',
         socials: {
           linkedin: 'https://www.linkedin.com/in/anandabhinav01',
           github: '',
@@ -429,7 +429,7 @@ export const TEAMS: Team[] = [
         id: 'ml-5',
         name: 'Padala Monish Reddy',
         role: 'Machine Learning Engineer',
-        image: '/images/team/placeholder-20.png',
+        image: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779795582/bg-removed-images/epxcswqkmdtzaihyjf5l.png',
         socials: {
           linkedin: 'https://www.linkedin.com/in/padala-monish-reddy-a7780b30b?utm_source=share_via&utm_content=profile&utm_medium=member_android',
           github: 'https://github.com/MonishPadala-13',
@@ -440,7 +440,7 @@ export const TEAMS: Team[] = [
         id: 'ml-6',
         name: 'Shobhit Kumar',
         role: 'Machine Learning Engineer',
-        image: '/images/team/placeholder-19.png',
+        image: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779795455/bg-removed-images/xqgilp6v7fbohq1h0yer.png',
         socials: {
           linkedin: 'https://www.linkedin.com/in/shobhit-kumar-215600325?utm_source=share_via&utm_content=profile&utm_medium=member_android',
           github: 'https://github.com/Shobhit2702',
@@ -451,7 +451,7 @@ export const TEAMS: Team[] = [
         id: 'ml-7',
         name: 'Tanushree Thakur',
         role: 'Machine Learning Engineer',
-        image: '/images/team/placeholder-20.png',
+        image: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779795553/bg-removed-images/kfmgwiz1fdpl5vjta5wf.png',
         socials: {
           linkedin: 'www.linkedin.com/in/tanushree-thakur-2a4020248',
           github: 'https://github.com/tanushreethak-ui',
@@ -496,7 +496,7 @@ export const TEAMS: Team[] = [
         id: 'pr-1',
         name: 'Varchas Kumar',
         role: 'PR Executive',
-        image: '/images/team/placeholder-1.png',
+        image: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779795702/bg-removed-images/spdjqixiobk07walbgt0.png',
         socials: {
           linkedin: 'https://www.linkedin.com/in/varchas-kumar-073a75366/',
           github: 'https://github.com/varchaskumar',
@@ -518,7 +518,7 @@ export const TEAMS: Team[] = [
         id: 'pr-3',
         name: 'Kirti',
         role: 'PR Executive',
-        image: '/images/team/placeholder-3.png',
+        image: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779795755/bg-removed-images/xqwg1xiexgdzfzlketnn.png',
         socials: {
           linkedin: 'https://www.linkedin.com/in/kirti-708466367/',
           github: 'https://github.com/kirtic921',
@@ -529,7 +529,7 @@ export const TEAMS: Team[] = [
         id: 'pr-4',
         name: 'Manish Kumar',
         role: 'PR Executive',
-        image: '/images/team/placeholder-4.png',
+        image: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779795185/bg-removed-images/nvrzk7ehyvgzk5fn2fbw.png',
         socials: {
           linkedin: 'https://www.linkedin.com/in/manish-gupta-205567377',
           github: 'https://github.com/manish-gupta-09',
@@ -570,9 +570,9 @@ export const TEAMS: Team[] = [
     color: '#A1A6B4',
     leader: {
       id: 'design-lead',
-      name: 'Biswajit Mandal',
+      name: 'IDK',
       role: 'Team Lead',
-      image: '/images/team/placeholder-19.png',
+      image: '',
       socials: {
         linkedin: 'https://www.linkedin.com/in/biswajit-mandal-0b3790273?utm_source=share_via&utm_content=profile&utm_medium=member_android',
         github: 'https://github.com/BiswajitMandal6',
@@ -585,7 +585,7 @@ export const TEAMS: Team[] = [
         id: 'design-1',
         name: 'Aastik Verma',
         role: 'UI/UX Designer',
-        image: '/images/team/placeholder-20.png',
+        image: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779795389/bg-removed-images/j2aa5nquwk4fdsbwwqtj.png',
         socials: {
           linkedin: 'https://www.linkedin.com/in/aastik-verma-096841395?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
           github: 'https://github.com/aastikverma-bit',
@@ -607,7 +607,7 @@ export const TEAMS: Team[] = [
         id: 'design-3',
         name: 'Amrendra Kumar Dinkar',
         role: 'UI/UX Designer',
-        image: '/images/team/placeholder-20.png',
+        image: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779795290/bg-removed-images/tijntjmhlxt9ebdxx5ws.png',
         socials: {
           linkedin: 'https://www.linkedin.com/in/aastik-verma-096841395?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
           github: 'https://github.com/aastikverma-bit',
