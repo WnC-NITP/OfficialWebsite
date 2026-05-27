@@ -1,263 +1,206 @@
 'use client';
-import { useRef, useState } from 'react';
-import dynamic from 'next/dynamic';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useGSAP } from '@gsap/react';
-import { gsap, ScrollTrigger } from '@/hooks/useGSAPAnimation';
-import { useMediaQuery } from '@/hooks/useMediaQuery';
-import AnimatedCounter from '@/components/ui/AnimatedCounter';
-import HudLoadingScreen from '@/components/ui/HudLoadingScreen';
-import { STATS, SITE_CONFIG } from '@/lib/constants';
-// const ParticleField = dynamic(() => import('@/components/three/ParticleField'), { ssr: false });
-/* ── Lazy-load the heavy 3D canvas (no SSR) ── */
-const MacBookCanvas = dynamic(
-  () => import('@/components/three/MacBookCanvas'),
-  { ssr: false }
-);
-/* ── About section "values" data ── */
-const values = [
-  { icon: '⚡', title: 'Innovation', desc: 'Pushing boundaries with cutting-edge tech' },
-  { icon: '🤝', title: 'Collaboration', desc: 'Building together, growing together' },
-  { icon: '📚', title: 'Learning', desc: 'Continuous growth through hands-on projects' },
-  { icon: '🌍', title: 'Community', desc: 'A family of passionate technologists' },
-];
+
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowUpRight, X } from 'lucide-react';
+import { Inter } from 'next/font/google';
+
+const inter = Inter({ subsets: ['latin'] });
+
 export default function HeroSection() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const pinnedRef = useRef<HTMLDivElement>(null);
-  const scrollProgressRef = useRef<number>(0);
-  const isMobile = useMediaQuery('(max-width: 768px)');
-  const [isLoaded, setIsLoaded] = useState(false);
-  /* ── Entrance animation for hero text ── */
-  useGSAP(() => {
-    if (!pinnedRef.current) return;
-    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-    tl.from('.hero-tag', { opacity: 0, y: 20, duration: 0.5, delay: 0.3 })
-      .from('.hero-title', { opacity: 0, y: 40, duration: 0.8 }, '-=0.2')
-      .from('.hero-subtitle', { opacity: 0, y: 30, duration: 0.6 }, '-=0.4')
-      .from('.hero-tagline', { opacity: 0, y: 20, duration: 0.5 }, '-=0.3')
-      .from('.hero-stats > div', { opacity: 0, y: 20, stagger: 0.1, duration: 0.5 }, '-=0.2')
-      .from('.hero-cta', { opacity: 0, y: 20, stagger: 0.15, duration: 0.5 }, '-=0.2')
-      .from('.hero-scroll-indicator', { opacity: 0, duration: 0.6 }, '-=0.1');
-  }, { scope: pinnedRef });
-  /* ── Scroll-driven animation (scrub) ── */
-  useGSAP(() => {
-    if (!containerRef.current || !pinnedRef.current) return;
-    const scrollTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: 'top top',
-        end: 'bottom bottom',
-        scrub: 1.2,
-        onUpdate: (self) => {
-          scrollProgressRef.current = self.progress;
-        },
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const fadeDownVariant = {
+    initial: { opacity: 0, y: -20 },
+    animate: (custom: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: custom * 0.1,
+        duration: 0.5,
+        ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
       },
-    });
-    /* Hero text fades out: 0% → 35% */
-    scrollTl.to(
-      '.hero-text-column',
-      { opacity: 0, x: -80, duration: 0.35, ease: 'power2.in' },
-      0
-    );
-    /* Scroll indicator fades early: 0% → 15% */
-    scrollTl.to(
-      '.hero-scroll-indicator',
-      { opacity: 0, y: 20, duration: 0.15 },
-      0
-    );
-    /* Background overlay (darken for transition): 30% → 60% */
-    scrollTl.fromTo(
-      '.hero-about-transition-overlay',
-      { opacity: 0 },
-      { opacity: 0.3, duration: 0.3 },
-      0.3
-    );
-    scrollTl.to(
-      '.hero-about-transition-overlay',
-      { opacity: 0, duration: 0.2 },
-      0.6
-    );
-    /* About text column fades in: 55% → 90% */
-    scrollTl.fromTo(
-      '.about-text-column',
-      { opacity: 0, x: 80 },
-      { opacity: 1, x: 0, duration: 0.35, ease: 'power2.out' },
-      0.55
-    );
-    /* About section header animate */
-    scrollTl.fromTo(
-      '.about-section-header',
-      { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 0.25, ease: 'power2.out' },
-      0.55
-    );
-    /* About values stagger in: 65% → 95% */
-    scrollTl.fromTo(
-      '.about-value-card',
-      { opacity: 0, y: 25 },
-      { opacity: 1, y: 0, stagger: 0.06, duration: 0.2, ease: 'power2.out' },
-      0.65
-    );
-    /* Graffiti bg parallax */
-    scrollTl.to(
-      '.hero-bg-image',
-      { y: -60, duration: 1, ease: 'none' },
-      0
-    );
-  }, { scope: containerRef, dependencies: [isMobile] });
+    }),
+  };
+
+  const fadeUpVariant = {
+    initial: { opacity: 0, y: 32 },
+    animate: (custom: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: custom * 0.12,
+        duration: 0.6,
+        ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
+      },
+    }),
+  };
+
+  const slideUpVariant = {
+    initial: { y: '110%' },
+    animate: (custom: number) => ({
+      y: 0,
+      transition: {
+        delay: 0.4 + custom * 0.14,
+        duration: 0.7,
+        ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
+      },
+    }),
+  };
+
   return (
-    <>
-    {/* Full-screen HUD loading overlay */}
-    <HudLoadingScreen onLoadingComplete={() => setIsLoaded(true)} />
+    <section className={`relative min-h-screen flex flex-col ${inter.className} text-black uppercase tracking-widest font-semibold`}>
+      {/* Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover z-0"
+      >
+        <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260517_222138_3e3205be-3364-417b-a64a-bfe087acbec4.mp4" type="video/mp4" />
+      </video>
 
-    <div ref={containerRef} className="hero-about-container">
-      <div ref={pinnedRef} className="hero-about-pinned">
-        {/* ── Background layers ── */}
-        <div className="hero-about-bg">
-          <Image
-            src="/images/graffiti/hero-bg.svg"
-            alt=""
-            fill
-            className="hero-bg-image object-cover opacity-98"
-            priority
-            unoptimized
-          />
-          <div className="hero-about-bg-gradient" />
-        </div>
-      {/* Particle Field */}
-      <div className="absolute inset-0 z-[1]">
-        {/* <ParticleField /> */}
-      </div>
-        {/* Transition overlay */}
-        <div className="hero-about-transition-overlay" />
-      {/* Noise */}
-      <div className="absolute inset-0 noise-overlay z-[2] pointer-events-none" />
-        {/* Noise */}
-        <div className="hero-about-noise noise-overlay" />
-      {/* Content
-      <div className="relative z-10 container-narrow text-center flex flex-col items-center gap-6 py-32">
-        <span className="hero-tag text-mono text-xs tracking-[0.2em]">
-          // ESTABLISHED 2018 — NIT PATNA
-        </span> */}
-        {/* ── 3D Canvas overlay ── */}
-        <div className="macbook-canvas-overlay">
-          <MacBookCanvas scrollProgress={scrollProgressRef} isMobile={isMobile} />
-        </div>
-        {/* {/* <h1 className="hero-title text-display gradient-text-coral">
-          Web & Coding
-          <br />
-          Club
-        </h1> */}
-        {/* <p className="hero-subtitle text-heading text-[var(--text-secondary)]" style={{ fontFamily: 'var(--font-display)' }}>
-          NIT Patna
-        </p> */}
-        {/* ── Hero Text Column (LEFT) ── */}
-        <div className="hero-text-column">
-
-        {/* <p className="hero-tagline text-body max-w-lg text-lg">
-          {SITE_CONFIG.tagline}. {SITE_CONFIG.description.slice(0, 120)}...
-        </p> */}
-          <h1 className="hero-title text-display gradient-text-primary">
-            Web &amp; Coding
-            <br />
-            Club
-          </h1>
-        {/* Stats
-        <div className="hero-stats flex flex-wrap justify-center gap-8 md:gap-12 mt-4">
-          {STATS.map((stat) => (
-            <div key={stat.label} className="flex flex-col items-center gap-1">
-              <span className="text-3xl md:text-4xl font-bold text-[var(--text-primary)]" style={{ fontFamily: 'var(--font-display)' }}>
-                <AnimatedCounter target={stat.value} suffix={stat.suffix} />
-              </span>
-              <span className="text-mono text-[0.65rem]">{stat.label}</span>
-            </div>
-          ))} */}
-          <p
-            className="hero-subtitle text-heading text-[var(--text-secondary)]"
-            style={{ fontFamily: 'var(--font-display)' }}
+      {/* Content Overlay */}
+      <div className="relative z-10 flex flex-col min-h-screen">
+        
+        {/* Navigation Bar */}
+        <nav className="flex items-center justify-end px-5 sm:px-8 md:px-12 pt-5 md:pt-6">
+          {/* Hamburger */}
+          <motion.button
+            custom={5}
+            initial="initial"
+            animate="animate"
+            variants={fadeDownVariant}
+            onClick={() => setIsMobileMenuOpen(true)}
+            className="w-9 h-9 rounded-full bg-black flex flex-col items-center justify-center gap-1 shrink-0"
           >
-            NIT Patna
-          </p>
-          <p className="hero-tagline text-body max-w-lg text-lg">
-            {SITE_CONFIG.tagline}. {SITE_CONFIG.description.slice(0, 120)}...
-          </p>
-          {/* Stats */}
-          <div className="hero-stats flex flex-wrap gap-8 md:gap-12 mt-4">
-            {STATS.map((stat) => (
-              <div key={stat.label} className="flex flex-col items-center gap-1">
-                <span
-                  className="text-3xl md:text-4xl font-bold text-[var(--text-primary)]"
-                  style={{ fontFamily: 'var(--font-display)' }}
+            <span className="w-4 h-0.5 bg-white"></span>
+            <span className="w-4 h-0.5 bg-white"></span>
+            <span className="w-4 h-0.5 bg-white"></span>
+          </motion.button>
+        </nav>
+
+        {/* Mobile Menu Overlay */}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-50 bg-white flex flex-col px-5 pt-5 pb-8"
+            >
+              <div className="flex items-center justify-end">
+                <button
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="w-9 h-9 rounded-full bg-black flex items-center justify-center text-white"
                 >
-                  <AnimatedCounter target={stat.value} suffix={stat.suffix} />
-                </span>
-                <span className="text-mono text-[0.65rem]">{stat.label}</span>
+                  <X size={20} />
+                </button>
               </div>
-            ))}
-          </div>
-          {/* CTAs */}
-          <div className="flex flex-wrap justify-center gap-4 mt-6">
-            <Link href="/team" className="hero-cta btn-primary">
-              Explore Teams
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </Link>
-            <Link href="/events" className="hero-cta btn-secondary">
-              View Events
-            </Link>
-          </div>
-        </div>
-        {/* ── Scroll indicator ── */}
-        <div className="hero-scroll-indicator">
-          <span className="text-mono text-[0.6rem] tracking-[0.15em] text-[var(--text-muted)]">
-            SCROLL
-          </span>
-          <div className="scroll-line">
-            <div className="scroll-line-inner" />
-          </div>
-        </div>
-        {/* ── About Text Column (RIGHT — fades in on scroll) ── */}
-        <div className="about-text-column">
-          {/* Section Header */}
-          <div className="about-section-header">
-            <div
-              className="h-[2px] w-16 rounded-full mb-4"
-              style={{
-                background: 'linear-gradient(90deg, var(--accent-primary), transparent)',
-              }}
-            />
-            <h2 className="text-heading gradient-text-secondary">About Us</h2>
-            <p className="text-body max-w-md mt-2">What drives us forward</p>
-          </div>
-          {/* About description */}
-          <p className="text-lg leading-relaxed text-[var(--text-secondary)] mt-6">
-            {SITE_CONFIG.description}
-          </p>
-          <p className="text-body mt-4">
-            From weekend hackathons to structured bootcamps, from blockchain experiments
-            to AI research — we provide the platform, mentorship, and community for students
-            to transform their ideas into impactful projects.
-          </p>
-          {/* Values Grid */}
-          <div className="grid grid-cols-2 gap-3 mt-8">
-            {values.map((v) => (
-              <div
-                key={v.title}
-                className="about-value-card glass-card p-4 flex flex-col gap-2"
+
+              <a
+                href="#work"
+                className="mt-auto flex items-center gap-2 text-xl font-semibold text-[#5E0ED7]"
               >
-                <span className="text-2xl">{v.icon}</span>
-                <h4 className="text-sm font-semibold text-[var(--text-primary)]">
-                  {v.title}
-                </h4>
-                <p className="text-xs text-[var(--text-muted)]">{v.desc}</p>
-              </div>
+                JOIN THE CLUB <ArrowUpRight size={24} />
+              </a>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Stats Row (middle section) */}
+        <div className="flex-1 flex items-center justify-end px-5 sm:px-8 md:px-12 py-8 md:py-0">
+          <div className="flex flex-row items-center gap-5 sm:gap-8 md:gap-10 text-right">
+            {[
+              { number: '300', label: 'ACTIVE\nMEMBERS', custom: 2 },
+              { number: '200', label: 'OPEN SOURCE\nPROJECTS', custom: 3 },
+              { number: '100', label: 'HACKATHONS\nWON', custom: 4 },
+            ].map((stat) => (
+              <motion.div
+                key={stat.label}
+                custom={stat.custom}
+                initial="initial"
+                animate="animate"
+                variants={fadeUpVariant}
+                className="flex flex-col items-end"
+              >
+                <div className="font-semibold flex items-start" style={{ fontSize: 'clamp(1.5rem, 5vw, 3.5rem)' }}>
+                  <span className="text-[#5E0ED7] text-[0.5em] leading-[1.2] mt-[0.1em]">+</span>
+                  <span className="text-black leading-none">{stat.number}</span>
+                </div>
+                <div className="text-[10px] sm:text-xs md:text-sm text-black tracking-widest font-semibold whitespace-pre-line leading-tight">
+                  {stat.label}
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>
+
+        {/* Bottom Section */}
+        <div className="px-5 sm:px-8 md:px-12 pb-8 md:pb-12 flex flex-col gap-6 md:gap-12">
+          
+          {/* Row A */}
+          <div className="flex flex-row items-center justify-between gap-4">
+            <motion.p
+              custom={5}
+              initial="initial"
+              animate="animate"
+              variants={fadeUpVariant}
+              className="text-[10px] sm:text-xs md:text-sm font-semibold tracking-widest text-black max-w-[130px] sm:max-w-[160px] md:max-w-xs uppercase leading-relaxed m-0"
+            >
+              Empowering Minds <br />
+              Through Code <br />
+              And Innovation
+            </motion.p>
+
+            <motion.a
+              href="#work"
+              custom={6}
+              initial="initial"
+              animate="animate"
+              variants={fadeUpVariant}
+              className="flex items-center gap-1 sm:gap-2 text-base sm:text-xl md:text-2xl font-semibold text-[#5E0ED7] whitespace-nowrap uppercase"
+            >
+              JOIN THE CLUB <ArrowUpRight className="w-[18px] h-[18px] sm:w-[22px] sm:h-[22px]" />
+            </motion.a>
+          </div>
+
+          {/* Row B */}
+          <div className="flex flex-row items-end justify-between gap-3 sm:gap-4">
+            <motion.div
+              custom={7}
+              initial="initial"
+              animate="animate"
+              variants={fadeUpVariant}
+              className="w-[120px] sm:w-[180px] md:w-[280px] shrink-0 text-left md:text-right"
+            >
+              <p className="text-[9px] sm:text-xs md:text-sm font-semibold tracking-widest uppercase text-black leading-relaxed m-0">
+                A community of developers dedicated to mastering modern web technologies and software engineering.
+              </p>
+            </motion.div>
+
+            <div className="flex flex-col items-end">
+              {['Code', 'Create', 'Deploy'].map((word, index) => (
+                <div key={word} className="overflow-hidden leading-[0.88]">
+                  <motion.div
+                    custom={index}
+                    initial="initial"
+                    animate="animate"
+                    variants={slideUpVariant}
+                    className="font-semibold uppercase text-black m-0 p-0"
+                    style={{ fontSize: 'clamp(2rem, 9vw, 9rem)' }}
+                  >
+                    {word}
+                  </motion.div>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+        </div>
+
       </div>
-    </div>
-    </>
+    </section>
   );
 }

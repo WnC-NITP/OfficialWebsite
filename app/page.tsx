@@ -1,4 +1,5 @@
 import HeroSection from '@/components/landing/HeroSection';
+import TeamsCarousel from '@/components/landing/TeamsCarousel';
 import PIPresidentSection from '@/components/landing/PIPresidentSection';
 import BentoGrid from '@/components/landing/BentoGrid';
 import GalleryPreview from '@/components/landing/GalleryPreview';
@@ -11,6 +12,7 @@ export default function Home() {
   return (
     <main>
       <HeroSection />
+      <TeamsCarousel />
       <hr className="section-divider" />
       <PIPresidentSection />
       <hr className="section-divider" />
