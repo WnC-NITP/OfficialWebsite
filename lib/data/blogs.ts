@@ -479,10 +479,6 @@ Treating your infrastructure like application code allows you to version control
       avatar: '/images/team/placeholder-7.png',
       role: 'DevOps Team',
     },
-    date: '2025-05-10',
-    tags: ['AI', 'Gen AI', 'LLM', 'Tutorial'],
-   coverImage: '/images/events/hackathon.png',
-    readTime: 10,
     date: '2026-01-30',
     tags: ['Terraform', 'IaC', 'DevOps'],
     coverImage: '/images/events/hackathon.png',
@@ -1384,7 +1380,7 @@ DevOps skills are highly valuable in modern software teams.
   coverImage: '/images/hero/about-illustration.png',
   readTime: 8,
   featured: true,
-}
+},
 
   // ============================================================
   // WEB PERFORMANCE
