@@ -14,7 +14,7 @@ const TEAMS = [
   { name: 'CITADEL', title: 'BLOCKCHAIN', bg: '#7f8c8d', src: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779850643/blockchain_so4x4j.png' },
   { name: 'WIREFRAMES', title: 'UI/UX DESIGN', bg: '#b76e79', src: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779850643/blockchain_so4x4j.png' },
   { name: 'RUNTIME', title: 'DATA STRUCTURES AND ALGORITHMS', bg: '#b76e79', src: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779850643/blockchain_so4x4j.png' },
-
+  { name: 'LINKS', title: 'SOCIAL MEDIA AND PR', bg: '#2ecc71', src: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779850643/blockchain_so4x4j.png' },
 ];
 
 export default function TeamsCarousel() {
@@ -76,13 +76,13 @@ export default function TeamsCarousel() {
           className={`absolute inset-x-0 flex items-center justify-center pointer-events-none select-none z-[2] ${anton.className}`}
           style={{ 
             top: '18%', 
-            fontSize: 'clamp(90px, 28vw, 380px)', 
+            fontSize: 'clamp(50px, 16vw, 220px)', 
             fontWeight: 900, 
-            color: 'rgba(255, 255, 255, 0.25)', 
+            color: '#ffffff', 
             opacity: 1, 
             lineHeight: 1, 
             textTransform: 'uppercase', 
-            letterSpacing: '-0.02em', 
+            letterSpacing: '0.04em', 
             whiteSpace: 'nowrap' 
           }}
         >
