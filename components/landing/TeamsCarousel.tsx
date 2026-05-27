@@ -13,7 +13,7 @@ const TEAMS = [
   { name: 'AUTOREG', title: 'GENERATIVE AI', bg: '#ff1493', src: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779850646/genai_wsbq0e.png' },
   { name: 'CITADEL', title: 'BLOCKCHAIN', bg: '#7f8c8d', src: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779850643/blockchain_so4x4j.png' },
   { name: 'WIREFRAMES', title: 'UI/UX DESIGN', bg: '#b76e79', src: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779850643/blockchain_so4x4j.png' },
-  { name: 'RUNTIME', title: 'DATA STRUCTURES AND ALGORITHMS', bg: '#b76e79', src: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779850643/blockchain_so4x4j.png' },
+  { name: 'RUNTIME', title: 'DATA STRUCTURES AND ALGORITHMS', bg: '#423b3c', src: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779850643/blockchain_so4x4j.png' },
   { name: 'LINKS', title: 'SOCIAL MEDIA AND PR', bg: '#2ecc71', src: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779850643/blockchain_so4x4j.png' },
 ];
 
