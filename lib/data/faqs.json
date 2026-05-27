@@ -1,57 +1,52 @@
-{
-    "faq":[
-        {
-          "id":"faq-1",
-            "Question":"What is Web and Coding club at NIT Patna?",
-            "answer":"Web and coding club at NIT Patna is a community where students interested in web development and programming can come together to learn, share knowledge, and work on projects." 
-        },
-           
-        {
-            "id":"faq-2",
-            "Question":"How this club is different from other clubs of NIT Patna?",
-            "answer":"This club is specially focused on web development and coding.Everyone with an interest in these areas can join and learn together, regardless of their prior experience or background."
-        
-        },
-        {
-            "id":"faq-3",
-            "Question":"What are the benefits of learning Web and Coding?",
-            "answer":"Learning web and coding can open up a wide range of career opportunities in technology, enhance problem-solving skills, and enable individuals to create their own projects and contribute to the digital world."
-        },
-        {
-            "id":"faq-4",
-            "Question":"Why you should join this club?",
-            "answer":"Joining this club can provide a supportive community for learning, access to resources and mentorship, and opportunities to collaborate on projects and participate in coding challenges."
-        },
-        {
-            "id":"faq-5",
-            "Question":"Do I need prior experience to join the club?",
-            "answer":"No, prior experience is not necessary to join the club. Begginners are welcome, and the club often provides resources and support to help new members learn and grow their coding skills."
-        },
-        {
-            "id":"faq-6",
-            "Question":"How this club can help me in my future?",
-            "answer":"Being part of a web and coding club can enhance your technical skills, provide networking opportunities,and makes your resume stand out. It give you practical experience that can be valuable in future academic and career pursuits in the technology field ."
-        },
-        {
-            "id":"faq-7",
-            "Question":"How can I join the club?",
-            "answer":"To join the club, you can typically sign up through a registration process, attend meetings or events, and actively participate in club activities."
-        },
-        {
-            "id":"faq-8",
-            "Question":"Does this club is cenered around web development or any other aspect of coding?",
-            "answer":"The club may focus on various aspects of coding, including web development, software development, data science, and more. It often depends on the interests and goals of the members."
-           
-        },
-        {
-            "id":"faq-9",
-            "Question":"Are there any specific programming languages or tools that the club focuses on?",
-            "answer":"The club may focus on popular programming languages such as Python, JavaScript, HTML/CSS, and tools like Git, depending on the interests of the members and the projects they undertake."
-        },
-        {
-            "id":"faq-10",
-            "Question":"What kind of projects or activities does the club typically engage in?",
-            "answer":"The club may engage in a variety of projects and activities, including coding challenges, hackathons, collaborative software development, workshops, and guest speaker sessions to enhance members' coding skills and knowledge."
-        }
-    ]
-}
+[
+  {
+    "id": "faq-1",
+    "question": "What is Web and Coding club at NIT Patna?",
+    "answer": "Web and coding club at NIT Patna is a community where students interested in web development and programming can come together to learn, share knowledge, and work on projects."
+  },
+  {
+    "id": "faq-2",
+    "question": "How this club is different from other clubs of NIT Patna?",
+    "answer": "This club is specially focused on web development and coding.Everyone with an interest in these areas can join and learn together, regardless of their prior experience or background."
+  },
+  {
+    "id": "faq-3",
+    "question": "What are the benefits of learning Web and Coding?",
+    "answer": "Learning web and coding can open up a wide range of career opportunities in technology, enhance problem-solving skills, and enable individuals to create their own projects and contribute to the digital world."
+  },
+  {
+    "id": "faq-4",
+    "question": "Why you should join this club?",
+    "answer": "Joining this club can provide a supportive community for learning, access to resources and mentorship, and opportunities to collaborate on projects and participate in coding challenges."
+  },
+  {
+    "id": "faq-5",
+    "question": "Do I need prior experience to join the club?",
+    "answer": "No, prior experience is not necessary to join the club. Begginners are welcome, and the club often provides resources and support to help new members learn and grow their coding skills."
+  },
+  {
+    "id": "faq-6",
+    "question": "How this club can help me in my future?",
+    "answer": "Being part of a web and coding club can enhance your technical skills, provide networking opportunities,and makes your resume stand out. It give you practical experience that can be valuable in future academic and career pursuits in the technology field ."
+  },
+  {
+    "id": "faq-7",
+    "question": "How can I join the club?",
+    "answer": "To join the club, you can typically sign up through a registration process, attend meetings or events, and actively participate in club activities."
+  },
+  {
+    "id": "faq-8",
+    "question": "Does this club is cenered around web development or any other aspect of coding?",
+    "answer": "The club may focus on various aspects of coding, including web development, software development, data science, and more. It often depends on the interests and goals of the members."
+  },
+  {
+    "id": "faq-9",
+    "question": "Are there any specific programming languages or tools that the club focuses on?",
+    "answer": "The club may focus on popular programming languages such as Python, JavaScript, HTML/CSS, and tools like Git, depending on the interests of the members and the projects they undertake."
+  },
+  {
+    "id": "faq-10",
+    "question": "What kind of projects or activities does the club typically engage in?",
+    "answer": "The club may engage in a variety of projects and activities, including coding challenges, hackathons, collaborative software development, workshops, and guest speaker sessions to enhance members' coding skills and knowledge."
+  }
+]
