@@ -35,7 +35,7 @@ export default function DeveloperCard({ developer }: { developer: Developer }) {
         {/* Portrait Container */}
         <div className="mx-6 mt-2 relative border-[4px] border-[#222] h-[260px] flex items-end justify-center rounded-sm overflow-visible"
           style={{ 
-            backgroundImage: 'url("https://i.pinimg.com/1200x/2f/06/4c/2f064cb24c938b4f83c092ca600333af.jpg")', 
+            backgroundImage: 'url("https://res.cloudinary.com/dq1fhihvx/image/upload/v1779891788/original-images/ym5po6fcshotzzzdspji.png")', 
             backgroundSize: 'cover', 
             backgroundPosition: 'center' 
           }}>

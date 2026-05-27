@@ -10,11 +10,11 @@ const anton = Anton({ subsets: ['latin'], weight: '400' });
 const TEAMS = [
   { name: 'STATELESS', title: 'WEB DEVELOPMENT', bg: '#00d4ff', src: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779849873/web_dev_kqphxb.png' },
   { name: 'TENSOR', title: 'MACHINE LEARNING', bg: '#4a00e0', src: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779850644/ml_tspsk1.png' },
-  { name: 'AUTOREG', title: 'GENERATIVE AI', bg: '#ff1493', src: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779850646/genai_wsbq0e.png' },
-  { name: 'CITADEL', title: 'BLOCKCHAIN', bg: '#7f8c8d', src: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779850643/blockchain_so4x4j.png' },
-  { name: 'WIREFRAMES', title: 'UI/UX DESIGN', bg: '#b76e79', src: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779850643/blockchain_so4x4j.png' },
-  { name: 'RUNTIME', title: 'DATA STRUCTURES AND ALGORITHMS', bg: '#423b3c', src: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779850643/blockchain_so4x4j.png' },
-  { name: 'LINKS', title: 'SOCIAL MEDIA AND PR', bg: '#2ecc71', src: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779850643/blockchain_so4x4j.png' },
+  { name: 'AUTOREG', title: 'GENERATIVE AI', bg: '#331463', src: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779888281/original-images/xknzoitpv9pwpgumfgqy.png' },
+  { name: 'CITADEL', title: 'BLOCKCHAIN', bg: '#3a5a9c', src: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779850643/blockchain_so4x4j.png' },
+  { name: 'WIREFRAMES', title: 'UI/UX DESIGN', bg: '#82342b', src: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779887944/original-images/nz1br7eguvwd9ool7vfe.png' },
+  { name: 'RUNTIME', title: 'DATA STRUCTURES AND ALGORITHMS', bg: '#273269', src: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779889221/original-images/q7phhztjuu6bqewgagdr.png' },
+  { name: 'LINKS', title: 'SOCIAL MEDIA AND PR', bg: '#261e3d', src: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1779885477/original-images/gq4oedztygusxs751e0m.png' },
 ];
 
 export default function TeamsCarousel() {
@@ -58,7 +58,7 @@ export default function TeamsCarousel() {
   };
 
   return (
-    <div className={`relative w-full overflow-hidden ${inter.className}`} style={{ backgroundColor: TEAMS[activeIndex].bg, transition: 'background-color 650ms cubic-bezier(0.4,0,0.2,1)' }}>
+    <div className={`relative w-full overflow-hidden ${inter.className}`} style={{ backgroundColor: `${TEAMS[activeIndex].bg}90`, transition: 'background-color 650ms cubic-bezier(0.4,0,0.2,1)' }}>
       <div className="relative w-full" style={{ height: '100vh', overflow: 'hidden' }}>
         
         {/* Grain overlay */}
@@ -79,7 +79,7 @@ export default function TeamsCarousel() {
             fontSize: 'clamp(50px, 16vw, 220px)', 
             fontWeight: 900, 
             color: '#ffffff', 
-            opacity: 1, 
+            opacity: 0.7, 
             lineHeight: 1, 
             textTransform: 'uppercase', 
             letterSpacing: '0.04em', 
@@ -100,7 +100,7 @@ export default function TeamsCarousel() {
             const role = getRole(i);
             let style: React.CSSProperties = {
               position: 'absolute',
-              aspectRatio: '1.2 / 1',
+              aspectRatio: '1 / 1',
               transition: 'transform 650ms cubic-bezier(0.4,0,0.2,1), filter 650ms cubic-bezier(0.4,0,0.2,1), opacity 650ms cubic-bezier(0.4,0,0.2,1), left 650ms cubic-bezier(0.4,0,0.2,1), top 650ms cubic-bezier(0.4,0,0.2,1)',
               willChange: 'transform, filter, opacity, left, top',
             };
