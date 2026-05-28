@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
 import faqs from '@/lib/data/faqs.json';
 
 export default function FaqSection() {
@@ -64,15 +63,6 @@ export default function FaqSection() {
           })}
         </div>
 
-        {/* Contact CTA */}
-        <div className="mt-16 flex justify-center">
-          <Link 
-            href="/contact" 
-            className="px-8 py-3.5 rounded-full bg-white text-black text-sm font-semibold hover:bg-gray-200 transition-colors shadow-lg"
-          >
-            Contact Us
-          </Link>
-        </div>
       </div>
     </section>
   );
