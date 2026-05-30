@@ -209,8 +209,9 @@ export default function MemberCard({ member, teamColor = '#D4643B', teamName = '
           </div>
 
           {/* B. Center Graphic / Photo Canvas */}
-          <div className="flex-grow relative rounded-xl border-[2.5px] border-[#0e1713] overflow-hidden shadow-[3px_3px_0px_rgba(14,23,19,0.15)]">
+          <div className="flex-grow relative rounded-xl border-[2.5px] border-[#0e1713] overflow-visible shadow-[3px_3px_0px_rgba(14,23,19,0.15)]">
             {/* Dynamic solid background with subtle paint halftone or noise */}
+            
             <div
               className="absolute inset-0 z-0 opacity-90 transition-colors duration-500"
               style={{ backgroundColor: teamColor }}
@@ -221,7 +222,7 @@ export default function MemberCard({ member, teamColor = '#D4643B', teamName = '
             </div>
 
             {/* CUTOUT PHOTO OR HIGH-FIDELITY AVATAR FALLBACK */}
-            <div className="absolute inset-0 z-10 flex items-end justify-center overflow-hidden">
+            <div className="absolute inset-0 flex items-end justify-center z-10 overflow-visible rounded-sm">
               {isPlaceholder ? (
                 // Super styled neo-brutalist pop art avatar
                 <div className="w-full h-full flex flex-col items-center justify-center p-3 relative group-hover:scale-105 transition-transform duration-300">
@@ -245,14 +246,19 @@ export default function MemberCard({ member, teamColor = '#D4643B', teamName = '
                 </div>
               ) : (
                 // Real Image
+                <div className="absolute inset-0 flex items-end justify-center z-10 overflow-visible rounded-sm"
+                  style={{ clipPath: 'polygon(0% -100%, 100% -100%, 100% 100%, 0% 100%)' }}>
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-cover object-bottom transition-all duration-300"
+                  className="w-[90%] h-[95%] object-cover object-bottom transition-transform duration-500 ease-out group-hover:scale-110"
                   style={{
-                    filter: 'drop-shadow(2px 0px 0 white) drop-shadow(-2px 0px 0 white) drop-shadow(0px -2px 0 white) drop-shadow(0 20px 20px rgba(0,0,0,0.4))',
+                    objectPosition: `${member.imagePosition?.x ?? 50}% ${member.imagePosition?.y ?? 30}%`,
+                    transform: `translate(${member.imageTransform?.x || 0}px, ${member.imageTransform?.y || 0}px) scale(${member.imageTransform?.scale || 1})`,
+                    filter: 'drop-shadow(2px 2px 0 white) drop-shadow(-2px -2px 0 white) drop-shadow(-2px 2px 0 white) drop-shadow(2px -2px 0 white) drop-shadow(0 25px 25px rgba(0,0,0,0.5)) contrast(1.25)'
                   }}
                 />
+                </div>
               )}
             </div>
 

@@ -36,6 +36,7 @@ export const TEAMS: Team[] = [
           github: 'https://github.com/sg293307-cmd',
           email: 'Sweetyg.ug25.cs@nitp.ac.in',
         },
+        imageTransform: { x: 0, y: -20, scale: 1.1 },
       },
       {
         id: 'web-2',
@@ -47,6 +48,7 @@ export const TEAMS: Team[] = [
           github: 'https://github.com/AdityaKumar1511 ',
           email: 'aditya.kumar00706@gmail.com',
         },
+        imageTransform: { x: 0, y: 0, scale: 1.2 },
       },
       {
         id: 'web-3',
@@ -58,6 +60,7 @@ export const TEAMS: Team[] = [
           github: 'https://github.com/riteshyadav33302111-cell',
           email: 'riteshy.ug25.cs@nitp.ac.in',
         },
+        imageTransform: { x: 0, y: 0, scale: 1.2 },
       },
       {
         id: 'web-4',
@@ -69,6 +72,7 @@ export const TEAMS: Team[] = [
           github: 'https://github.com/anushkasingh250107-cmd',
           email: 'anushkasingh250107@gmail.com',
         },
+        imageTransform: { x: 0, y: 0, scale: 1.2 },
       },
       {
         id: 'web-5',
@@ -78,8 +82,9 @@ export const TEAMS: Team[] = [
         socials: {
           linkedin: 'https://www.linkedin.com/in/navya-anand-b38744387?utm_source=share_via&utm_content=profile&utm_medium=member_ios',
           github: 'https://github.com/navyaanand954-jpg',
-          email: 'navyaa.ug25.cs@nitp.ac.in',
+          email: 'navyaan.ug25.cs@nitp.ac.in',
         },
+        imageTransform: { x: 0, y: 0, scale: 1.2 },
       },
       {
         id: 'web-6',
@@ -91,6 +96,7 @@ export const TEAMS: Team[] = [
           github: 'satyamkumarjhaa2008-afk',
           email: 'satyamj.ug25.ec@nitp.ac.in',
         },
+        imageTransform: { x: 20, y: -150, scale: 2.5 },
       },
       {
         id: 'web-7',
@@ -102,6 +108,7 @@ export const TEAMS: Team[] = [
           github: 'https://github.com/Dhruvjain2207',
           email: 'dhruvj.ug25.cs@nitp.ac.in ',
         },
+        imageTransform: { x: 0, y: -30, scale: 1.2 },
       },
       {
         id: 'web-8',
@@ -113,6 +120,7 @@ export const TEAMS: Team[] = [
           github: 'https://github.com/Anjali260-ui',
           email: 'anjali.kr.gr318@gmail.com',
         },
+        imageTransform: { x: 0, y: 0, scale: 1.2 },
       },
       {
         id: 'web-9',
@@ -124,6 +132,7 @@ export const TEAMS: Team[] = [
           github: 'https://github.com/SujalKumar-156',
           email: 'Sujalk.ug25.cs@nitp.ac.in',
         },
+        imageTransform: { x: 0, y: -50, scale: 1.5 },
       },
       {
         id: 'web-10',
@@ -135,6 +144,7 @@ export const TEAMS: Team[] = [
           github: 'https://github.com/pavank-hub',
           email: 'pavank.ug24.ec@nitp.ac.in',
         },
+        imageTransform: { x: 0, y: -50, scale: 1.3 },
       },
       {
         id: 'web-11',
@@ -146,6 +156,7 @@ export const TEAMS: Team[] = [
           github: 'https://github.com/Rick13211',
           email: 'rickr.ug24.cs@nitp.ac.in',
         },
+        imageTransform: { x: -30, y: 10, scale: 2 },
       },
       {
         id: 'web-12',
@@ -157,6 +168,7 @@ export const TEAMS: Team[] = [
           github: 'https://github.com/Prashasti-Shrivastava',
           email: 'prashastis.ug25.cs@nitp.ac.in',
         },
+        imageTransform: { x: 0, y: -50, scale: 1.5 },
       },
       {
         id: 'web-13',
@@ -168,6 +180,7 @@ export const TEAMS: Team[] = [
           github: '',
           email: '',
         },
+        imageTransform: { x: 0, y: 0, scale: 1.2 },
       },
       {
         id: 'web-14',
@@ -179,6 +192,7 @@ export const TEAMS: Team[] = [
           github: '',
           email: '',
         },
+        imageTransform: { x: 0, y: 0, scale: 1.2 },
       },
     ],
   },
@@ -213,6 +227,7 @@ export const TEAMS: Team[] = [
           github: 'https://github.com/sridhantDalai',
           email: 'sridhant.dev@gmail.com',
         },
+        imageTransform: { x: 0, y: 0, scale: 1.2 },
       },
       {
         id: 'bc-2',
@@ -224,6 +239,7 @@ export const TEAMS: Team[] = [
           github: 'https://github.com/zaidali01',
           email: 'zaidali1446@gmail.com',
         },
+        imageTransform: { x: 0, y: -30, scale: 1.2 },
       },
       {
         id: 'bc-3',
@@ -235,6 +251,7 @@ export const TEAMS: Team[] = [
           github: 'https://github.com/rudraaa-pratap',
           email: 'ruddrrraaa@gmail.com',
         },
+        imageTransform: { x: 0, y: 0, scale: 1.7 },
       },
       {
         id: 'bc-4',
@@ -246,6 +263,7 @@ export const TEAMS: Team[] = [
           github: 'https://github.com/dev-ayush-17',
           email: 'ayushn.ug25.cs@nitp.ac.in',
         },
+        imageTransform: { x: -30, y: 20, scale: 2 },
       },
       {
         id: 'bc-5',
@@ -257,6 +275,7 @@ export const TEAMS: Team[] = [
           github: 'https://github.com/ashishraj-web',
           email: 'ashishr.ug25.cs@nitp.ac.in',
         },
+        imageTransform: { x: -10, y: -30, scale: 1.5 },
       },
       {
         id: 'bc-6',
@@ -268,6 +287,7 @@ export const TEAMS: Team[] = [
           github: 'https://github.com/TanishkaJindal',
           email: 'tanishkaj.ug25.cs@nitp.ac.in ',
         },
+        imageTransform: { x: 20, y: -50, scale: 1.3 },
       },
     ],
   },
@@ -302,6 +322,7 @@ export const TEAMS: Team[] = [
           github: 'https://github.com/sakshipriya21-rgb',
           email: 'sakship.ug25.ec@nitp.ac.in',
         },
+        imageTransform: { x: 0, y: 0, scale: 1.2 },
       },
       {
         id: 'genai-2',
@@ -313,6 +334,7 @@ export const TEAMS: Team[] = [
           github: 'https://github.com/BiswajitMandal6',
           email: 'biswajitm.ug24.cs@nitp.ac.in',
         },
+        imageTransform: { x: 0, y: 0, scale: 1.5 },
       },
       {
         id: 'genai-3',
@@ -324,6 +346,7 @@ export const TEAMS: Team[] = [
           github: '',
           email: '',
         },
+        imageTransform: { x: 0, y: 0, scale: 1.2 },
       },
       {
         id: 'genai-4',
@@ -335,6 +358,7 @@ export const TEAMS: Team[] = [
           github: '',
           email: '',
         },
+        imageTransform: { x: 0, y: 0, scale: 1.2 },
       },
       {
         id: 'genai-5',
@@ -346,6 +370,7 @@ export const TEAMS: Team[] = [
           github: 'https://github.com/kashyapanand21',
           email: 'anandk.ug25.cs@nitp.ac.in',
         },
+        imageTransform: { x: 0, y: -150, scale: 2 },
       },
       {
         id: 'genai-6',
@@ -357,6 +382,7 @@ export const TEAMS: Team[] = [
           github: '',
           email: '',
         },
+        imageTransform: { x: 0, y: 0, scale: 1.2 },
       },
     ],
   },
@@ -391,6 +417,7 @@ export const TEAMS: Team[] = [
           github: '',
           email: '',
         },
+        imageTransform: { x: 0, y: 0, scale: 1.2 },
       },
       {
         id: 'ml-2',
@@ -402,6 +429,7 @@ export const TEAMS: Team[] = [
           github: 'https://github.com/archana-117',
           email: 'archana.ug25.mae@nitp.ac.in',
         },
+        imageTransform: { x: 30, y: -70, scale: 1.5 },
       },
       {
         id: 'ml-3',
@@ -413,6 +441,7 @@ export const TEAMS: Team[] = [
           github: 'https://github.com/shreyashtripathi1077-cmd',
           email: 'shreyasht.ug25.me@nitp.ac.in',
         },
+        imageTransform: { x: 0, y: 0, scale: 1.5 },
       },
       {
         id: 'ml-4',
@@ -424,6 +453,7 @@ export const TEAMS: Team[] = [
           github: '',
           email: 'abhinava.ug24.ee@nitp.ac.in',
         },
+        imageTransform: { x: 0, y: -10, scale: 1.3 },
       },
       {
         id: 'ml-5',
@@ -435,6 +465,7 @@ export const TEAMS: Team[] = [
           github: 'https://github.com/MonishPadala-13',
           email: 'Padalar.ug24.me@nitp.ac.in',
         },
+        imageTransform: { x: 0, y: -30, scale: 1.6 },
       },
       {
         id: 'ml-6',
@@ -446,6 +477,7 @@ export const TEAMS: Team[] = [
           github: 'https://github.com/Shobhit2702',
           email: 'shobhitk.ug24.ec@nitp.ac.in',
         },
+        imageTransform: { x: 20, y: -30, scale: 1.2 },
       },
       {
         id: 'ml-7',
@@ -457,6 +489,7 @@ export const TEAMS: Team[] = [
           github: 'https://github.com/tanushreethak-ui',
           email: 'tanushreet.dd25.ph@nitp.ac.in',
         },
+        imageTransform: { x: 30, y: -50, scale: 2 },
       },
       {
         id: 'ml-8',
@@ -468,6 +501,7 @@ export const TEAMS: Team[] = [
           github: '',
           email: '',
         },
+        imageTransform: { x: 0, y: 0, scale: 1.2 },
       },
     ],
   },
@@ -502,6 +536,7 @@ export const TEAMS: Team[] = [
           github: 'https://github.com/varchaskumar',
           email: 'varchask.ug25.ec@nitp.ac.in',
         },
+        imageTransform: { x: 50, y: 100, scale: 2 },
       },
       {
         id: 'pr-2',
@@ -513,6 +548,7 @@ export const TEAMS: Team[] = [
           github: 'https://github.com/meSuraj004',
           email: 'schuahan0004@gmail.com',
         },
+        imageTransform: { x: 0, y: 0, scale: 1.2 },
       },
       {
         id: 'pr-3',
@@ -524,6 +560,7 @@ export const TEAMS: Team[] = [
           github: 'https://github.com/kirtic921',
           email: 'kirti.dd25.ch@nitp.ac.in',
         },
+        imageTransform: { x: -60, y: -140, scale: 2 },
       },
       {
         id: 'pr-4',
@@ -535,6 +572,7 @@ export const TEAMS: Team[] = [
           github: 'https://github.com/manish-gupta-09',
           email: 'manishk.ug25.ec@nitp.ac.in',
         },
+        imageTransform: { x: 0, y: 70, scale: 2.3 },
       },
       {
         id: 'pr-4',
@@ -546,6 +584,7 @@ export const TEAMS: Team[] = [
           github: '',
           email: '',
         },
+        imageTransform: { x: 0, y: 0, scale: 1.2 },
       },
       {
         id: 'pr-5',
@@ -557,6 +596,7 @@ export const TEAMS: Team[] = [
           github: '',
           email: '',
         },
+        imageTransform: { x: 0, y: 0, scale: 1.2 },
       },
     ],
   },
@@ -591,6 +631,7 @@ export const TEAMS: Team[] = [
           github: 'https://github.com/aastikverma-bit',
           email: 'aastikv.ug25.cs@nitp.ac.in',
         },
+        imageTransform: { x: 0, y: -20, scale: 2.4 },
       },
       {
         id: 'design-2',
@@ -602,6 +643,7 @@ export const TEAMS: Team[] = [
           github: 'https://github.com/TECHTHUNDER2018',
           email: 'nishantk.ug24.cs@nitp.ac.in',
         },
+        imageTransform: { x: 0, y: 0, scale: 1.2 },
       },
       {
         id: 'design-3',
@@ -613,6 +655,7 @@ export const TEAMS: Team[] = [
           github: 'https://github.com/aastikverma-bit',
           email: 'aastikv.ug25.cs@nitp.ac.in',
         },
+        imageTransform: { x: 0, y: -30, scale: 1.8 },
       },
       {
         id: 'design-4',
@@ -624,7 +667,8 @@ export const TEAMS: Team[] = [
           github: 'https://github.com/Prashasti-Shrivastava',
           email: 'prashastis.ug25.cs@nitp.ac.in',
         },
+        imageTransform: { x: -30, y: -20, scale: 1.7 },
       },
     ],
   },
-]
+];
