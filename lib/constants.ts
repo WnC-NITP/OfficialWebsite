@@ -13,7 +13,7 @@ export const SITE_CONFIG = {
   description:
     'A thriving community of builders, coders, and developers at NIT Patna. We turn ideas into impactful projects through collaboration, innovation, and relentless learning.',
   url: 'https://wncc-nitpatna.org',
-  email: 'wncc@nitp.ac.in',
+  email: 'coding.club@nitp.ac.in',
   address: 'NIT Patna, Ashok Rajpath, Patna, Bihar - 800005',
 } as const;
 
