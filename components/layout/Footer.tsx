@@ -27,154 +27,139 @@ export default function Footer() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.06),transparent_26%),radial-gradient(circle_at_bottom_right,rgba(212,100,59,0.12),transparent_26%),linear-gradient(180deg,rgba(255,255,255,0.02),transparent_30%)]" />
       <div className="pointer-events-none absolute inset-0 opacity-18 bg-[radial-gradient(rgba(255,255,255,0.12)_1px,transparent_1px)] bg-size-[22px_22px]" />
 
-      <div className="h-6 md:h-8 lg:h-10" />
+      <div className="relative container-wide">
 
-      <div className="relative container-wide pb-10 md:pb-12 lg:pb-14">
-        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.2fr_0.95fr] lg:items-start">
-          <div className="space-y-4">
-            <h4 className="text-2xl font-semibold leading-none text-(--text-primary) md:text-3xl" style={{ fontFamily: 'var(--font-display)' }}>
-              Teams
-            </h4>
-            <ul className="space-y-2">
-              {FOOTER_LINKS.teams.slice(0, 5).map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="group flex items-center justify-between border-b border-white/10 py-1.5 text-xs text-(--text-secondary) transition-all duration-300 hover:border-white/20 hover:text-(--text-primary) md:text-sm"
-                  >
-                    <span className="transition-transform duration-300 group-hover:translate-x-1">{link.label}</span>
-                    <span className="text-(--accent-primary) transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-0.5">↗</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+        {/* ── Main content: left brand | right links ── */}
+        <div className="flex flex-col gap-8 py-8 sm:flex-row sm:items-stretch sm:justify-between sm:gap-12 lg:gap-20">
 
-          <div className="rounded-4xl border border-white/10 bg-black/20 p-4 shadow-[0_25px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm md:p-6">
-            <div className="flex flex-col gap-5">
-              <div className="text-center lg:text-left">
-                <Link href="/" className="inline-flex items-baseline gap-3">
-                  <span className="text-2xl font-semibold leading-none text-(--text-primary) md:text-3xl" style={{ fontFamily: 'var(--font-display)' }}>
-                    {SITE_CONFIG.shortName}
-                  </span>
-                  <span className="text-[0.65rem] uppercase tracking-[0.3em] text-(--text-muted) md:text-xs">
-                    {SITE_CONFIG.institution}
-                  </span>
-                </Link>
-                <p className="mt-3 max-w-xl text-xs leading-5 text-(--text-secondary) md:text-sm">
-                  {SITE_CONFIG.description}
-                </p>
-                <p className="mt-3 text-mono text-[10px] text-(--text-muted) md:text-xs">{SITE_CONFIG.email}</p>
-              </div>
-
-              <div className="grid gap-3 sm:grid-cols-2">
-                <div>
-                  <h4 className="text-[10px] font-semibold uppercase tracking-[0.3em] text-(--text-muted) md:text-xs">
-                    Quick Links
-                  </h4>
-                  <ul className="mt-3 space-y-2">
-                    {FOOTER_LINKS.quickLinks.map((link) => (
-                      <li key={link.href}>
-                        <Link
-                          href={link.href}
-                          className="inline-block text-xs text-(--text-secondary) transition-all duration-300 hover:translate-x-1 hover:text-(--text-primary) md:text-sm"
-                        >
-                          {link.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div>
-                  <h4 className="text-[10px] font-semibold uppercase tracking-[0.3em] text-(--text-muted) md:text-xs">
-                    Resources
-                  </h4>
-                  <ul className="mt-3 space-y-2">
-                    {FOOTER_LINKS.resources.map((link) => (
-                      <li key={link.href}>
-                        {'isExternal' in link && link.isExternal ? (
-                          <a
-                            href={link.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="group inline-flex items-center gap-1 text-xs text-(--text-secondary) transition-all duration-300 hover:translate-x-1 hover:text-(--text-primary) md:text-sm"
-                          >
-                            <span>{link.label}</span>
-                            <svg className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                              <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
-                            </svg>
-                          </a>
-                        ) : (
-                          <Link
-                            href={link.href}
-                            className="inline-block text-xs text-(--text-secondary) transition-all duration-300 hover:translate-x-1 hover:text-(--text-primary) md:text-sm"
-                          >
-                            {link.label}
-                          </Link>
-                        )}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="space-y-4">
-            <h4 className="text-2xl font-semibold leading-none text-(--text-primary) md:text-3xl" style={{ fontFamily: 'var(--font-display)' }}>
-              Social
-            </h4>
-
+          {/* ── LEFT: branding + email + social ── */}
+          <div className="flex flex-col sm:min-w-[160px]">
+            {/* Name + email group */}
             <div className="space-y-2">
-              {SOCIAL_LINKS.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center justify-between border-b border-white/10 py-1.5 text-xs text-(--text-secondary) transition-all duration-300 hover:border-white/20 hover:text-(--text-primary) md:text-sm"
-                  aria-label={social.name}
+              <Link href="/" className="inline-flex items-baseline gap-2">
+                <span
+                  className="text-xl font-semibold leading-none text-(--text-primary)"
+                  style={{ fontFamily: 'var(--font-display)' }}
                 >
-                  <span className="transition-transform duration-300 group-hover:translate-x-1">{social.name}</span>
-                  <span className="text-(--accent-primary) transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-0.5">↗</span>
-                </a>
-              ))}
+                  {SITE_CONFIG.shortName.toUpperCase()}
+                </span>
+                <span className="text-[0.6rem] uppercase tracking-[0.25em] text-(--text-secondary)">
+                  {SITE_CONFIG.institution}
+                </span>
+              </Link>
+              <span className="block font-mono text-[10px] tracking-widest text-(--text-secondary)">
+                {SITE_CONFIG.email}
+              </span>
             </div>
 
-            <div className="flex flex-wrap gap-2">
+            {/* Social icons pushed to bottom */}
+            <div className="mt-auto flex flex-wrap gap-2 pt-5">
               {SOCIAL_LINKS.map((social) => (
                 <a
                   key={social.name}
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-(--text-muted) transition-all duration-300 hover:-translate-y-0.5 hover:scale-105 hover:border-transparent hover:text-white md:h-10 md:w-10 ${socialHoverBackgrounds[social.icon] || 'hover:bg-white/10'}`}
+                  className={`flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-white/5 text-(--text-muted) transition-all duration-300 hover:-translate-y-0.5 hover:scale-105 hover:border-transparent hover:text-white ${socialHoverBackgrounds[social.icon] || 'hover:bg-white/10'}`}
                   aria-label={social.name}
                 >
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                     <path d={socialIcons[social.icon] || ''} />
                   </svg>
                 </a>
               ))}
             </div>
           </div>
-        </div>
 
-        <div className="mt-10 flex flex-col gap-3 border-t border-white/10 pt-4 md:flex-row md:items-center md:justify-between">
-          <p className="text-[10px] text-(--text-muted) md:text-xs">
-            © {new Date().getFullYear()} {SITE_CONFIG.fullName}. Built with ❤️ by WnCC developers.
-          </p>
+          {/* ── RIGHT: link columns ── */}
+          <div className="grid grid-cols-2 gap-x-8 gap-y-6 sm:grid-cols-3 sm:gap-x-10 sm:gap-y-0 lg:gap-x-16">
 
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-[10px] text-(--text-secondary) md:text-xs">
-              {SITE_CONFIG.shortName}
-            </span>
-            <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-[10px] text-(--text-secondary) md:text-xs">
-              {SITE_CONFIG.institution}
-            </span>
+            {/* Teams */}
+            <div className="space-y-2">
+              <h5 className="text-xs font-semibold uppercase tracking-[0.2em] text-(--text-primary)">
+                Teams
+              </h5>
+              <ul className="space-y-0.5">
+                {FOOTER_LINKS.teams.slice(0, 5).map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="group inline-flex text-xs text-(--text-muted) transition-all duration-200 hover:text-(--text-primary)"
+                    >
+                      <span className="transition-transform duration-200 group-hover:translate-x-0.5">
+                        {link.label}
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Quick Links */}
+            <div className="space-y-2">
+              <h5 className="text-xs font-semibold uppercase tracking-[0.2em] text-(--text-primary)">
+                Quick Links
+              </h5>
+              <ul className="space-y-0.5">
+                {FOOTER_LINKS.quickLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="group inline-flex text-[11px] text-(--text-muted) transition-all duration-200 hover:text-(--text-primary)"
+                    >
+                      <span className="transition-transform duration-200 group-hover:translate-x-0.5">
+                        {link.label}
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Resources — spans full width on mobile 2-col, normal on sm+ */}
+            <div className="col-span-2 space-y-2 sm:col-span-1">
+              <h5 className="text-xs font-semibold uppercase tracking-[0.2em] text-(--text-primary)">
+                Resources
+              </h5>
+              <ul className="space-y-0.5">
+                {FOOTER_LINKS.resources.map((link) => (
+                  <li key={link.href}>
+                    {'isExternal' in link && link.isExternal ? (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group inline-flex text-[11px] text-(--text-muted) transition-all duration-200 hover:text-(--text-primary)"
+                      >
+                        <span className="transition-transform duration-200 group-hover:translate-x-0.5">
+                          {link.label}
+                        </span>
+                      </a>
+                    ) : (
+                      <Link
+                        href={link.href}
+                        className="group inline-flex text-[11px] text-(--text-muted) transition-all duration-200 hover:text-(--text-primary)"
+                      >
+                        <span className="transition-transform duration-200 group-hover:translate-x-0.5">
+                          {link.label}
+                        </span>
+                      </Link>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
           </div>
         </div>
+
+        {/* ── Bottom bar: copyright ── */}
+        <div className="border-t border-white/5 py-4">
+          <p className="text-center text-[10px] text-(--text-muted) md:text-xs">
+            © {new Date().getFullYear()} {SITE_CONFIG.fullName}. Built with ❤️ by WnCC developers.
+          </p>
+        </div>
+
       </div>
     </footer>
   );
