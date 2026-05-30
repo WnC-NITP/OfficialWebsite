@@ -25,6 +25,11 @@ export interface TeamMember {
   role: string;
   image: string;
   imagePosition?: ImagePosition;
+  imageTransform?: {
+    x?: number;
+    y?: number;
+    scale?: number;
+  };
   socials: SocialLinks;
   quote?: string;
 }
