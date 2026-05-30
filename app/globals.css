@@ -1107,5 +1107,12 @@ a {
   .about-text-column {
     padding: 5rem 1rem 2rem;
   }
+}
 
+/* Hide Spline Logo Watermark */
+div[style*="absolute"] > a[href*="spline.design"],
+a[href*="spline.design"] {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
 }
