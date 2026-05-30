@@ -1,4 +1,5 @@
 import React from 'react';
+import LoadingScreen from '@/components/landing/LoadingScreen';
 import SentinelHero from '@/components/landing/SentinelHero';
 import StoryScrollDemo from '@/components/landing/StoryScrollDemo';
 import TeamsCarousel from '@/components/landing/TeamsCarousel';
@@ -29,6 +30,7 @@ function SectionWrapper({ children, textureUrl }: { children: React.ReactNode, t
 export default function Home() {
   return (
     <main>
+      <LoadingScreen />
       <SentinelHero />
       <hr className="section-divider" />
       
