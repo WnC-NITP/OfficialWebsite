@@ -1,68 +1,23 @@
 'use client';
 
 import React, { useRef, useEffect } from 'react';
-import { InteractiveRobotSpline } from '@/components/ui/interactive-3d-robot';
+import { SpiderCursor } from '@/components/ui/spider-cursor';
 
 export default function SentinelHero() {
-  const splineWrapperRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const wrapper = splineWrapperRef.current;
-    if (!wrapper) return;
-
-    const handleWheel = (e: WheelEvent) => {
-      // Block the event from reaching Spline's internal canvas handlers
-      e.stopPropagation();
-      e.preventDefault();
-
-      // Re-dispatch on the hero section's parent so Lenis still receives the scroll
-      const heroSection = wrapper.closest('section');
-      const target = heroSection?.parentElement ?? document.documentElement;
-      target.dispatchEvent(
-        new WheelEvent('wheel', {
-          deltaX: e.deltaX,
-          deltaY: e.deltaY,
-          deltaZ: e.deltaZ,
-          deltaMode: e.deltaMode,
-          clientX: e.clientX,
-          clientY: e.clientY,
-          screenX: e.screenX,
-          screenY: e.screenY,
-          bubbles: true,
-          cancelable: true,
-        })
-      );
-    };
-
-    // Capture phase fires top-down, so our handler runs BEFORE Spline's canvas handler
-    wrapper.addEventListener('wheel', handleWheel, { capture: true, passive: false });
-    return () => wrapper.removeEventListener('wheel', handleWheel, { capture: true });
-  }, []);
-
   return (
     <section 
       className="relative min-h-screen flex items-end bg-hero-bg overflow-hidden"
     >
       
-      {/* 3D Background — interactive for mouse/hover, but wheel events are intercepted to remove lag */}
+      {/* 3D Background replaced with Interactive Spider Cursor */}
       <div 
-        ref={splineWrapperRef} 
-        className="absolute inset-0"
+        className="absolute inset-0 z-0"
       >
-        <InteractiveRobotSpline
-          scene="https://prod.spline.design/PyzDhpQ9E5f1E3MT/scene.splinecode"
-          className="w-full h-full"
-        />
+        <SpiderCursor color="#00D4FF" />
       </div>
 
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/30 z-[1] pointer-events-none" />
-
-      {/* Cover the "Built with Spline" watermark at bottom-right */}
-      <div 
-        className="absolute bottom-0 right-0 z-[2] pointer-events-none"
-        style={{ width: '220px', height: '60px', background: 'linear-gradient(to right, transparent, #0a0a0a 30%)' }}
-      />
 
       {/* Content Container */}
       <div className="relative z-10 pointer-events-none w-full max-w-[90%] sm:max-w-md lg:max-w-2xl px-6 md:px-10 pb-10 md:pb-10 pt-32">

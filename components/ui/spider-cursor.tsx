@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react"
 
-export function SpiderCursor() {
+export function SpiderCursor({ color = "#fff" }: { color?: string }) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
@@ -102,9 +102,8 @@ export function SpiderCursor() {
     function anim(t: number) {
       if (w !== window.innerWidth) w = canvas!.width = window.innerWidth
       if (h !== window.innerHeight) h = canvas!.height = window.innerHeight
-      ctx.fillStyle = "#000"
-      drawCircle(0, 0, w * 10)
-      ctx.fillStyle = ctx.strokeStyle = "#fff"
+      ctx.clearRect(0, 0, w, h)
+      ctx.fillStyle = ctx.strokeStyle = color
       t /= 1000
       spiders.forEach((spider) => spider.tick(t))
       animationFrameId = requestAnimationFrame(anim)
