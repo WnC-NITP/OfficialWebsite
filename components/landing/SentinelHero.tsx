@@ -1,9 +1,7 @@
 'use client';
 
-import React, { Suspense, lazy, useRef, useEffect } from 'react';
-
-// Lazy load the Spline component to prevent hydration mismatch and improve initial load time
-const Spline = lazy(() => import('@splinetool/react-spline'));
+import React, { useRef, useEffect } from 'react';
+import { InteractiveRobotSpline } from '@/components/ui/interactive-3d-robot';
 
 export default function SentinelHero() {
   const splineWrapperRef = useRef<HTMLDivElement>(null);
@@ -46,21 +44,25 @@ export default function SentinelHero() {
       className="relative min-h-screen flex items-end bg-hero-bg overflow-hidden"
     >
       
-      {/* 3D Background — interactive for mouse/hover, but wheel events are intercepted */}
+      {/* 3D Background — interactive for mouse/hover, but wheel events are intercepted to remove lag */}
       <div 
         ref={splineWrapperRef} 
         className="absolute inset-0"
       >
-        <Suspense fallback={<div className="absolute inset-0 bg-hero-bg" />}>
-          <Spline
-            scene="https://prod.spline.design/Slk6b8kz3LRlKiyk/scene.splinecode"
-            className="w-full h-full"
-          />
-        </Suspense>
+        <InteractiveRobotSpline
+          scene="https://prod.spline.design/PyzDhpQ9E5f1E3MT/scene.splinecode"
+          className="w-full h-full"
+        />
       </div>
 
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/30 z-[1] pointer-events-none" />
+
+      {/* Cover the "Built with Spline" watermark at bottom-right */}
+      <div 
+        className="absolute bottom-0 right-0 z-[2] pointer-events-none"
+        style={{ width: '220px', height: '60px', background: 'linear-gradient(to right, transparent, #0a0a0a 30%)' }}
+      />
 
       {/* Content Container */}
       <div className="relative z-10 pointer-events-none w-full max-w-[90%] sm:max-w-md lg:max-w-2xl px-6 md:px-10 pb-10 md:pb-10 pt-32">
